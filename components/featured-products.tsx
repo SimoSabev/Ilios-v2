@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { ProductCard } from "./product-card"
-import { QuickLookModal } from "./quick-look-modal"
 import { Reveal } from "./reveal"
 
 // Define a clean Product type
@@ -99,7 +98,6 @@ export function FeaturedProducts() {
           </motion.div>
         </div>
 
-        <QuickLookModal product={selectedProduct} isOpen={isModalOpen} onClose={closeModal} />
       </section>
   )
 }

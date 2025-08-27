@@ -54,55 +54,7 @@ export function YachtShowcaseSection() {
                     </div>
                 </Reveal>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-                    {showcaseItems.map((item, index) => (
-                        <Reveal key={index} delay={index * 0.1}>
-                            <motion.div
-                                className="group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-500"
-                                whileHover={{y: -10}}
-                            >
-                                <div className="relative aspect-[4/3] overflow-hidden">
-                                    <Image
-                                        src={item.image || "/placeholder.svg"}
-                                        alt={item.title}
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div
-                                        className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"/>
 
-                                    <div className="absolute top-6 left-6">
-                                        <div
-                                            className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center">
-                                            <item.icon className="w-6 h-6 text-blue-600"/>
-                                        </div>
-                                    </div>
-
-                                    <div className="absolute top-6 right-6">
-                                        <div
-                                            className="bg-white/90 backdrop-blur-sm text-neutral-900 px-3 py-1 rounded-full text-sm font-semibold">
-                                            {item.stats}
-                                        </div>
-                                    </div>
-
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-300 transition-colors">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-white/90 mb-4 leading-relaxed">{item.description}</p>
-                                        <motion.div
-                                            className="flex items-center gap-2 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                            whileHover={{x: 5}}
-                                        >
-                                            <span>Explore Projects</span>
-                                            <ArrowRight size={16}/>
-                                        </motion.div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </Reveal>
-                    ))}
-                </div>
 
                 <Reveal delay={0.4}>
                     <div className="text-center">

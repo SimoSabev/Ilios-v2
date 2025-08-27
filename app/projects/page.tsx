@@ -5,13 +5,25 @@ import {Footer} from "@/components/footer"
 import {motion, useScroll, useTransform} from "framer-motion"
 import {Reveal} from "@/components/reveal"
 import Image from "next/image"
-import {MapPin, Users, Maximize, Award, Globe} from "lucide-react"
+import {MapPin, Users, Maximize,} from "lucide-react"
 import {useRef, useState} from "react"
-import {BlurPanel} from "@/components/blur-panel";
+
+type Project = {
+    category: string
+    subtitle: string
+    items: string[]
+    title?: string
+    description?: string
+    image?: string
+    year?: string
+    location?: string
+    size?: string
+    featured?: boolean
+}
 
 export default function ProjectsPage() {
-    const [selectedCategory, setSelectedCategory] = useState("all")
-    const [selectedProject, setSelectedProject] = useState<any>(null)
+    const [selectedCategory, ] = useState("all")
+    const [, setSelectedProject] = useState<Project | null>(null)
 
     const categories = [
         {id: "all", name: "All Projects"},
@@ -86,7 +98,7 @@ export default function ProjectsPage() {
     const contentY = useTransform(scrollYProgress, [0, 1], [0, 100])
     const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
-    const ProjectCard = ({project, index}: { project: any; index: number }) => (
+    const ProjectCard = ({project, index}: { project: Project; index: number }) => (
         <motion.div
             className={`group cursor-pointer ${
                 project.featured ? "md:col-span-2 md:row-span-2" : ""
@@ -98,7 +110,7 @@ export default function ProjectsPage() {
             <div className={`relative ${project.featured ? "aspect-[4/3]" : "aspect-square"} overflow-hidden`}>
                 <Image
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    alt={project.title || "Project Image"}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -189,31 +201,6 @@ export default function ProjectsPage() {
                         </Reveal>
                     </div>
                 </motion.div>
-
-                {/* Info Strip */}
-                <motion.div
-                    className="absolute bottom-0 left-0 right-0 z-20 flex justify-center"
-                    initial={{opacity: 0, y: 20}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{duration: 0.8, delay: 1.2, ease: [0.21, 0.47, 0.32, 0.98]}}
-                >
-                    <BlurPanel className="mx-6 mb-6 px-6 py-4 bg-black/24 backdrop-blur-md border-white/20">
-                        <div className="flex items-center justify-center gap-6 text-white/90">
-                            <div className="flex items-center gap-2">
-                                <Award className="w-4 h-4 text-[#bfaa95]"/>
-                                <span className="text-sm">15+ years experience</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Users className="w-4 h-4 text-[#bfaa95]"/>
-                                <span className="text-sm">200+ satisfied clients</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Globe className="w-4 h-4 text-[#bfaa95]"/>
-                                <span className="text-sm">Worldwide service</span>
-                            </div>
-                        </div>
-                    </BlurPanel>
-                </motion.div>
             </section>
 
             {/* Projects Gallery */}
@@ -296,7 +283,7 @@ export default function ProjectsPage() {
 
                     <Reveal delay={0.1}>
                         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Let's create something extraordinary together. Contact us to discuss your yacht design
+                            Let&apos;s create something extraordinary together. Contact us to discuss your yacht design
                             vision and join our
                             portfolio of satisfied clients.
                         </p>

@@ -4,7 +4,6 @@ import {Header} from "@/components/header"
 import {Footer} from "@/components/footer"
 import {motion, useScroll, useTransform} from "framer-motion"
 import {Reveal} from "@/components/reveal"
-import {BlurPanel} from "@/components/blur-panel"
 import Image from "next/image"
 import {Award, Users, Globe, Anchor} from "lucide-react"
 import {useRef} from "react"
@@ -108,31 +107,6 @@ export default function AboutPage() {
                             </motion.p>
                         </Reveal>
                     </div>
-                </motion.div>
-
-                {/* Info Strip */}
-                <motion.div
-                    className="absolute bottom-0 left-0 right-0 z-20 flex justify-center"
-                    initial={{opacity: 0, y: 20}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{duration: 0.8, delay: 1.2, ease: [0.21, 0.47, 0.32, 0.98]}}
-                >
-                    <BlurPanel className="mx-6 mb-6 px-6 py-4 bg-black/24 backdrop-blur-md border-white/20">
-                        <div className="flex items-center justify-center gap-6 text-white/90">
-                            <div className="flex items-center gap-2">
-                                <Award className="w-4 h-4 text-[#bfaa95]"/>
-                                <span className="text-sm">15+ years experience</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Users className="w-4 h-4 text-[#bfaa95]"/>
-                                <span className="text-sm">200+ satisfied clients</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Globe className="w-4 h-4 text-[#bfaa95]"/>
-                                <span className="text-sm">Worldwide service</span>
-                            </div>
-                        </div>
-                    </BlurPanel>
                 </motion.div>
             </section>
 
@@ -296,7 +270,7 @@ export default function AboutPage() {
 
                     <Reveal delay={0.1}>
                         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Let's discuss your vision and bring your yacht interior dreams to life with bespoke design
+                            Let&apos;s discuss your vision and bring your yacht interior dreams to life with bespoke design
                             solutions.
                         </p>
                     </Reveal>

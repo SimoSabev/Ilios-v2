@@ -1,10 +1,8 @@
 "use client"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { FeaturedProducts } from "@/components/featured-products"
 import { CollectionStrip } from "@/components/collection-strip"
 import { MaterialsSection } from "@/components/materials-section"
-import { NewsletterSection } from "@/components/newsletter-section"
 import { Footer } from "@/components/footer"
 import { YachtShowcaseSection } from "@/components/yacht-showcase-section"
 
@@ -17,7 +15,7 @@ export default function HomePage() {
       <YachtShowcaseSection />
       <CollectionStrip />
       <MaterialsSection />
-      <NewsletterSection />
+      {/*<NewsletterSection />*/}
       <Footer />
     </main>
   )

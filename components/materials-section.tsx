@@ -116,8 +116,8 @@ export function MaterialsSection() {
         <Reveal delay={0.3}>
           <blockquote className="pl-0 py-4">
             <p className="text-xl text-white leading-relaxed italic lg:text-base font-medium">
-              "We believe in creating yacht interiors that transcend trends—spaces that become more beautiful with time,
-              carrying memories of extraordinary journeys across the world's oceans."
+              &quot;We believe in creating yacht interiors that transcend trends—spaces that become more beautiful with time,
+              carrying memories of extraordinary journeys across the world&apos;s oceans.&quot;
             </p>
             <footer className="mt-4 text-sm text-white/70">— Ilios Decor Studio</footer>
           </blockquote>

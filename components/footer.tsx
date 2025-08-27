@@ -130,17 +130,6 @@ export function Footer() {
         >
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-neutral-500 text-center">
             <p>&copy; {currentYear} Ilios Decor. All rights reserved.</p>
-            <div className="flex space-x-6">
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-neutral-700 transition-colors">
-                Cookies
-              </a>
-            </div>
           </div>
         </motion.div>
       </div>

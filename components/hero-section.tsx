@@ -3,9 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 import Image from "next/image"
-import { Anchor, Compass, Award } from "lucide-react"
 import { Reveal } from "./reveal"
-import { BlurPanel } from "./blur-panel"
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -69,7 +67,7 @@ export function HeroSection() {
       >
         <div className="container-custom text-center text-white">
           <Reveal>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none tracking-tight mb-6">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight mb-6">
               <AnimatedText text="Luxury yacht design for" delay={0.5} />
               <br />
               <span className="italic font-light">
@@ -90,31 +88,6 @@ export function HeroSection() {
             </motion.p>
           </Reveal>
         </div>
-      </motion.div>
-
-      {/* Info Strip */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 z-20 flex justify-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
-      >
-        <BlurPanel className="mx-6 mb-6 px-6 py-4 bg-black/24 backdrop-blur-md border-white/20">
-          <div className="flex items-center justify-center gap-6 text-white/90">
-            <div className="flex items-center gap-2">
-              <Anchor className="w-4 h-4 text-blue-400" />
-              <span className="text-sm">Worldwide service</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Compass className="w-4 h-4 text-amber-400" />
-              <span className="text-sm">Custom design</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-green-400" />
-              <span className="text-sm">Premium materials</span>
-            </div>
-          </div>
-        </BlurPanel>
       </motion.div>
     </section>
   )

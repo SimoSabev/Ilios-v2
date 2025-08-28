@@ -38,9 +38,6 @@ export function YachtShowcaseSection() {
             <div className="container-custom">
                 <Reveal>
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 mb-12 leading-tight">
-                            TRANSFORM SPACES <span className="italic font-light">CREATE DREAMS</span>
-                        </h2>
                         <p className="text-xl text-neutral-600 max-w-5xl mx-auto leading-relaxed">
                             ILIOS Décor is offering a comprehensive styling and interior refurbishment service to create
                             the client’s dream environment on board and at home.
@@ -49,22 +46,20 @@ export function YachtShowcaseSection() {
                             Whether you are outfitting a luxury yacht or transforming your residential space, our
                             extensive network of trusted manufacturers - luxury brands, carefully sourced artisants and
                             crew-friendly suppliers - ensures we offer the finest selection of products.
-
                         </p>
                     </div>
                 </Reveal>
 
 
-
                 <Reveal delay={0.4}>
                     <div className="text-center">
                         <motion.a
-                            href="/projects"
+                            href="/products"
                             className="inline-flex items-center gap-3 bg-neutral-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-neutral-800 transition-colors text-lg"
                             whileHover={{scale: 1.05}}
                             whileTap={{scale: 0.95}}
                         >
-                            View All Projects
+                            View Products
                             <ArrowRight size={20}/>
                         </motion.a>
                     </div>

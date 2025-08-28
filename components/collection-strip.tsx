@@ -9,62 +9,32 @@ const collections = [
   {
     id: "modern-seating",
     name: "MODERN SEATING",
-    image: "/modern-armchair-pillows.png",
-    count: "8 pieces",
+    image: "/Project_1.png",
   },
   {
     id: "modular-design",
     name: "MODULAR DESIGN",
-    image: "/modular-cushion-bench.png",
-    count: "6 pieces",
+    image: "/Project_2.png",
   },
   {
     id: "cloud-collection",
     name: "CLOUD COLLECTION",
-    image: "/cloud-white-sofa.png",
-    count: "4 pieces",
+    image: "/Project_3.png",
   },
   {
     id: "artistic-pieces",
     name: "ARTISTIC PIECES",
-    image: "/distressed-artistic-chair.png",
-    count: "5 pieces",
+    image: "/Project_4.jpg",
   },
   {
     id: "contemporary",
     name: "CONTEMPORARY",
-    image: "/green-modular-loveseat.png",
-    count: "7 pieces",
+    image: "/Project_5.png",
   },
   {
     id: "textural-craft",
     name: "TEXTURAL CRAFT",
-    image: "/braided-rope-loveseat.png",
-    count: "3 pieces",
-  },
-  {
-    id: "maximalist-art",
-    name: "MAXIMALIST ART",
-    image: "/colorful-patchwork-sofa.png",
-    count: "4 pieces",
-  },
-  {
-    id: "scandinavian-comfort",
-    name: "SCANDINAVIAN COMFORT",
-    image: "/minimalist-boucle-loveseat.png",
-    count: "6 pieces",
-  },
-  {
-    id: "abstract-forms",
-    name: "ABSTRACT FORMS",
-    image: "/abstract-artistic-sofa.png",
-    count: "5 pieces",
-  },
-  {
-    id: "luxury-textures",
-    name: "LUXURY TEXTURES",
-    image: "/textured-cream-loveseat.png",
-    count: "8 pieces",
+    image: "/Project_6.png",
   },
 ]
 
@@ -87,10 +57,7 @@ export function CollectionStrip() {
       <div className="mb-12">
         <Reveal>
           <div className="container-custom text-center">
-            <h2 className="text-neutral-900 mb-4 text-6xl font-normal">Collections</h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Explore our curated collections, each telling a unique story of craftsmanship and design philosophy.
-            </p>
+            <h2 className="text-neutral-900 mb-4 text-6xl font-normal">Projects</h2>
           </div>
         </Reveal>
       </div>
@@ -113,15 +80,15 @@ export function CollectionStrip() {
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4">
                 <motion.div
                   className="relative w-full h-full"
-                  whileHover={{ filter: "blur(1px)" }}
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    src={collection.image || "/placeholder.svg"}
-                    alt={collection.name}
-                    fill
-                    className="object-cover"
-                    sizes="320px"
+                      src={collection.image || "/placeholder.svg"}
+                      alt={collection.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 320px"
+                      quality={100}
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300" />
                 </motion.div>
@@ -134,17 +101,12 @@ export function CollectionStrip() {
                     transition={{ duration: 0.3 }}
                   >
                     <h3 className="text-3xl font-bold tracking-wider mb-2">{collection.name}</h3>
-                    <p className="text-sm opacity-90">{collection.count}</p>
                   </motion.div>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
-      </div>
-
-      <div className="text-center mt-8">
-        <p className="text-sm text-neutral-500">← Drag to explore collections →</p>
       </div>
     </section>
   )

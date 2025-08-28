@@ -63,10 +63,10 @@ export default function ProductsPage() {
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 5,
-            name: "Galley Equipment & Holloware ",
+            name: "Galley Equipment & Holloware",
             category: "linens",
             image:
-                "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Products%20-%20Linen.jpg-Sc4mE3k83swQdskrycXFVIXwM1zEif.jpeg",
+                "/Holloware.jpg",
             description: "Exquisite Egyptian cotton bedding with hand-embroidered nautical rope patterns.",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -90,7 +90,23 @@ export default function ProductsPage() {
             name: "Uniforms & Crew Supplies",
             category: "linens",
             image:
-                "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Products%20-%20Linen.jpg-Sc4mE3k83swQdskrycXFVIXwM1zEif.jpeg",
+                "/Products_Crew%20Uniforms.jpeg",
+            description: "Exquisite Egyptian cotton bedding with hand-embroidered nautical rope patterns.",
+            features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
+        },{
+            id: 9,
+            name: "Decoration Towels",
+            category: "linens",
+            image:
+                "/Deck%20Towels.jpg",
+            description: "Exquisite Egyptian cotton bedding with hand-embroidered nautical rope patterns.",
+            features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
+        },{
+            id: 10,
+            name: "Soft Furnishings",
+            category: "linens",
+            image:
+                "/Soft%20Furnishings.png",
             description: "Exquisite Egyptian cotton bedding with hand-embroidered nautical rope patterns.",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         },

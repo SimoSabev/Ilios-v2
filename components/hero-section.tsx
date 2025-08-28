@@ -68,24 +68,12 @@ export function HeroSection() {
         <div className="container-custom text-center text-white">
           <Reveal>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight mb-6">
-              <AnimatedText text="Luxury yacht design for" delay={0.5} />
+              <AnimatedText text="TRANSFORM SPACES" delay={0.5} />
               <br />
               <span className="italic font-light">
-                <AnimatedText text="sophisticated voyages." delay={1.1} />
+                <AnimatedText text="CREATE DREAMS" delay={1.1} />
               </span>
             </h1>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <motion.p
-              className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
-            >
-              Bespoke interior and exterior design for luxury yachts. Creating timeless maritime spaces with premium
-              materials and sophisticated elegance.
-            </motion.p>
           </Reveal>
         </div>
       </motion.div>

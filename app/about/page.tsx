@@ -5,7 +5,7 @@ import {Footer} from "@/components/footer"
 import {motion, useScroll, useTransform} from "framer-motion"
 import {Reveal} from "@/components/reveal"
 import Image from "next/image"
-import {Award, Users, Globe, Anchor} from "lucide-react"
+import {Award, Layers, LineSquiggle, Monitor, Box} from "lucide-react"
 import {useRef} from "react"
 
 export default function AboutPage() {
@@ -22,28 +22,29 @@ export default function AboutPage() {
 
     const achievements = [
         {
-            icon: Award,
-            number: "15+",
-            label: "Years Experience",
-            description: "Designing luxury yacht interiors",
+            icon: Award, // Could represent recognition or premium quality
+            label: "Interior Décor Selection",
+            image: "/About_Cards_1.png",
         },
         {
-            icon: Users,
-            number: "200+",
-            label: "Satisfied Clients",
-            description: "Worldwide yacht owners",
+            icon: LineSquiggle, // Tools for materials or craftsmanship
+            label: "Premium Materials’ Supply",
+            image: "/About_Cards_2.png",
         },
         {
-            icon: Globe,
-            number: "50+",
-            label: "Countries Served",
-            description: "International project delivery",
+            icon: Layers, // Layering spaces or optimization
+            label: "Space Optimization",
+            image: "/About_Cards_3.jpeg",
         },
         {
-            icon: Anchor,
-            number: "300+",
-            label: "Yachts Designed",
-            description: "From 30m to 150m superyachts",
+            icon: Box, // Refurbishment or organization
+            label: "Interior Refurbishment",
+            image: "/About_Cards_4.jpg",
+        },
+        {
+            icon: Monitor, // Project planning or management
+            label: "Project Management",
+            image: "/About_Cards_1.png",
         },
     ]
 
@@ -85,28 +86,28 @@ export default function AboutPage() {
                     className="relative z-10 h-full flex items-center justify-center"
                     style={{y: contentY, opacity: contentOpacity}}
                 >
-                    <div className="container-custom text-center text-white">
-                        <Reveal>
-                            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none tracking-tight mb-6">
-                                Meet the
-                                <br/>
-                                <span className="italic font-light">Designer</span>
-                            </h1>
-                        </Reveal>
+                    {/*<div className="container-custom text-center text-white">*/}
+                    {/*    <Reveal>*/}
+                    {/*        <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none tracking-tight mb-6">*/}
+                    {/*            Meet the*/}
+                    {/*            <br/>*/}
+                    {/*            <span className="italic font-light">Designer</span>*/}
+                    {/*        </h1>*/}
+                    {/*    </Reveal>*/}
 
-                        <Reveal delay={0.2}>
-                            <motion.p
-                                className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"
-                                initial={{opacity: 0, y: 20}}
-                                animate={{opacity: 1, y: 0}}
-                                transition={{duration: 0.8, delay: 0.7, ease: [0.21, 0.47, 0.32, 0.98]}}
-                            >
-                                Crafting extraordinary yacht experiences through sophisticated design and uncompromising
-                                attention to
-                                detail.
-                            </motion.p>
-                        </Reveal>
-                    </div>
+                    {/*    <Reveal delay={0.2}>*/}
+                    {/*        <motion.p*/}
+                    {/*            className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"*/}
+                    {/*            initial={{opacity: 0, y: 20}}*/}
+                    {/*            animate={{opacity: 1, y: 0}}*/}
+                    {/*            transition={{duration: 0.8, delay: 0.7, ease: [0.21, 0.47, 0.32, 0.98]}}*/}
+                    {/*        >*/}
+                    {/*            Crafting extraordinary yacht experiences through sophisticated design and uncompromising*/}
+                    {/*            attention to*/}
+                    {/*            detail.*/}
+                    {/*        </motion.p>*/}
+                    {/*    </Reveal>*/}
+                    {/*</div>*/}
                 </motion.div>
             </section>
 
@@ -124,18 +125,23 @@ export default function AboutPage() {
                             <Reveal delay={0.1}>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
                                     <p>
-                                        As a founder of ILIOS Décor, I enjoy assisting clients with their interior needs
-                                        and offering personalized styling solutions for their home, yacht or aircraft.
+                                        My name is Iliyana, and I founded ILIOS Décor with a simple yet profound
+                                        mission: to blend my passion for excellence with my dedication to creating
+                                        exceptional spaces that truly resonate with the people who live in them.
                                     </p>
                                     <p>
                                         Through multiple years of experience as a Project Manager at a Monaco based
                                         Interior Design company and as part of the Owners’ Team of two truly outstanding
-                                        superyachts, MY A and SY A,
-                                    </p>
-                                    <p>
-                                        I had the opportunity to be closely involved with
+                                        superyachts, MY A and SY A, I had the opportunity to be closely involved with
                                         various aspects of creating, maintaining and refurbishing the interior of
                                         numerous luxury assets.
+                                    </p>
+                                    <p>
+                                        At ILIOS Décor, our vocation is to assist clients discover personalized styling
+                                        solutions that perfectly reflect their unique tastes while ensuring their spaces
+                                        are both functional and inviting. Whether it’s sourcing the finest materials,
+                                        selecting the perfect furniture, or managing complex refits, we approach each
+                                        project with care, attention to detail, and a commitment to service excellence.
                                     </p>
                                 </div>
                             </Reveal>
@@ -162,37 +168,65 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Achievements Section */}
-            <section className="py-20 bg-neutral-200">
+            {/* Expertise / Collections Section */}
+            <section className="py-20 bg-neutral-100">
                 <div className="container-custom">
+                    {/* Section Header */}
                     <Reveal>
-                        <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 text-center mb-16">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 text-center mb-4">
                             Experience & <span className="italic font-light">Expertise</span>
                         </h2>
+                        <p className="text-lg lg:text-xl font-light text-neutral-700 text-center max-w-3xl mx-auto mb-16">
+                            15+ years of experience sourcing, supplying, curating, and maintaining exquisite interiors for luxury yachts and high-end properties.
+                        </p>
                     </Reveal>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {achievements.map((achievement, index) => (
-                            <Reveal key={index} delay={index * 0.1}>
-                                <motion.div
-                                    className="text-center p-6 bg-[#bfaa95] rounded-xl shadow-sm"
-                                    whileHover={{y: -5}}
-                                    transition={{duration: 0.3}}
-                                >
-                                    <div
-                                        className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <achievement.icon className="w-8 h-8 text-[#bfaa95]"/>
-                                    </div>
-                                    <div className="text-3xl font-bold text-neutral-600 mb-2">{achievement.number}</div>
-                                    <div
-                                        className="text-lg font-semibold text-neutral-200 mb-2">{achievement.label}</div>
-                                    <div className="text-sm text-neutral-600">{achievement.description}</div>
-                                </motion.div>
-                            </Reveal>
-                        ))}
+                    {/* Areas of Expertise Header */}
+                    <Reveal>
+                        <h3 className="text-3xl lg:text-4xl font-semibold text-neutral-900 text-center mb-12">
+                            Areas of Expertise
+                        </h3>
+                    </Reveal>
+
+                    {/* Expertise Cards Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {achievements.map((achievement, index) => {
+
+                            return (
+                                <Reveal key={index} delay={index * 0.1}>
+                                    <motion.div
+                                        className="relative w-full h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                                        whileHover={{y: -6, scale: 1.03}}
+                                    >
+                                        {/* Background Image */}
+                                        <Image
+                                            src={achievement.image}
+                                            alt={achievement.label}
+                                            fill
+                                            className="object-cover"
+                                            priority
+                                        />
+                                        {/* Overlay */}
+                                        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6">
+                                            {/* Icon */}
+                                            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-white/20 mb-4">
+                                                <achievement.icon className="w-10 h-10 text-white" />
+                                            </div>
+
+                                            {/* Label */}
+                                            <h4 className="text-xl font-semibold text-white text-center">
+                                                {achievement.label}
+                                            </h4>
+                                        </div>
+                                    </motion.div>
+                                </Reveal>
+                            )
+                        })}
                     </div>
                 </div>
             </section>
+
+
 
             {/* Philosophy Section */}
             <section className="py-20 lg:py-32">
@@ -206,7 +240,7 @@ export default function AboutPage() {
                                     transition={{duration: 0.3}}
                                 >
                                     <Image
-                                        src="/Extra%20Image.jpg"
+                                        src="/About-Bottom%20Page.jpg"
                                         alt="Yacht exterior seating with custom cushions"
                                         fill
                                         className="object-cover"
@@ -260,29 +294,29 @@ export default function AboutPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="py-20 bg-[#bfaa95] text-white">
+            <section className="py-20 bg-neutral-900 text-white">
                 <div className="container-custom text-center">
                     <Reveal>
                         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                            Ready to Create Your <span className="italic font-light">Dream Yacht?</span>
+                            Ready to Start Your <span className="italic font-light">Project?</span>
                         </h2>
                     </Reveal>
 
                     <Reveal delay={0.1}>
                         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Let&apos;s discuss your vision and bring your yacht interior dreams to life with bespoke design
-                            solutions.
+                            Contact us today to discuss your yacht design needs and discover how we can bring your
+                            vision to life.
                         </p>
                     </Reveal>
 
                     <Reveal delay={0.2}>
                         <motion.a
-                            href="/contact"
+                            href="#contact"
                             className="inline-flex items-center gap-2 bg-white text-neutral-900 px-8 py-4 rounded-full font-semibold hover:bg-neutral-100 transition-colors"
                             whileHover={{scale: 1.05}}
                             whileTap={{scale: 0.95}}
                         >
-                            Start Your Project
+                            Get In Touch
                         </motion.a>
                     </Reveal>
                 </div>

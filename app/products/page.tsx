@@ -30,7 +30,7 @@ export default function ProductsPage() {
     const products = [
         {
             id: 1,
-            name: "Nautical Embroidered Bedding Set",
+            name: "Bed & Table Linen",
             category: "linens",
             image:
                 "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Products%20-%20Linen.jpg-Sc4mE3k83swQdskrycXFVIXwM1zEif.jpeg",
@@ -39,7 +39,7 @@ export default function ProductsPage() {
         },
         {
             id: 2,
-            name: "Cushions & Soft Furnishings",
+            name: "Cushions",
             category: "linens",
             image:
                 "/Products%20-%20Cushions.jpg",
@@ -95,7 +95,7 @@ export default function ProductsPage() {
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         },{
             id: 9,
-            name: "Decoration Towels",
+            name: "Deck Towels",
             category: "linens",
             image:
                 "/Deck%20Towels.jpg",
@@ -272,61 +272,6 @@ export default function ProductsPage() {
                             </motion.div>
                         ))}
                     </motion.div>
-                </div>
-            </section>
-
-            {/* Large Hero Image Section */}
-            <section className="py-20 bg-neutral-50">
-                <div className="container-custom">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-                        <div>
-                            <Reveal>
-                                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
-                                    Crafted for the <span className="italic font-light">Ocean</span>
-                                </h2>
-                            </Reveal>
-
-                            <Reveal delay={0.1}>
-                                <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                                    Every product in our collection is meticulously selected and tested to withstand the
-                                    unique challenges
-                                    of the marine environment while maintaining the highest standards of luxury and
-                                    comfort.
-                                </p>
-                            </Reveal>
-
-                            <Reveal delay={0.2}>
-                                <div className="grid grid-cols-2 gap-6">
-                                    <div className="text-center">
-                                        <div className="text-3xl font-bold text-[#bfaa95] mb-2">500+</div>
-                                        <div className="text-sm text-neutral-600">Premium Products</div>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="text-3xl font-bold text-[#bfaa95] mb-2">25+</div>
-                                        <div className="text-sm text-neutral-600">Luxury Brands</div>
-                                    </div>
-                                </div>
-                            </Reveal>
-                        </div>
-
-                        <div>
-                            <Reveal delay={0.3}>
-                                <motion.div
-                                    className="relative aspect-[4/3] rounded-2xl overflow-hidden"
-                                    whileHover={{scale: 1.02}}
-                                    transition={{duration: 0.3}}
-                                >
-                                    <Image
-                                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Main%20Page%20Bottom%20Services.jpg-rFqNllpVZTHSBW09Dfu5REJdl19nPy.webp"
-                                        alt="Luxury yacht interior dining setup"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"/>
-                                </motion.div>
-                            </Reveal>
-                        </div>
-                    </div>
                 </div>
             </section>
 

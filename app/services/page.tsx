@@ -12,7 +12,7 @@ export default function ServicesPage() {
     const services = [
         {
             icon: Palette,
-            title: "",
+            title: "Text",
             features: ["Tailored-made Interior Décor Proposals", "Personalised Product Development", "Competitive & Transparent Pricing", "Detailed Quotes", "Delivery Schedules & Updates", "Sea stowing & Fastening", "Worldwide Delivery & Installation"],
             image:
                 "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Main%20Page%20Bottom%20Services.jpg-7WFTJ4P3DGyzs5ICddcHiNYqVnBoYx.jpeg",
@@ -159,7 +159,7 @@ export default function ServicesPage() {
                 </motion.div>
             </section>
             <Reveal className={"w-full flex justify-center items-center"}>
-                <h2 className="text-xl lg:text-2xl max-w-4xl p-12 w-full text-neutral-900 mb-6">
+                <h2 className="text-xl max-w-[175vh] lg:text-2xl text-center p-12 w-full text-neutral-900 mb-6">
                     Our services expand from New Build full interior setup, FFE & Owner’s supply, interior support for
                     refit projects, upholstery, furniture restoration to crew uniforms and guest amenities. From the
                     initial consultation to final delivery, our personalised service and consistent communication keeps
@@ -188,8 +188,7 @@ export default function ServicesPage() {
                                     </Reveal>
 
                                     <Reveal delay={0.3}>
-                                        <div className="space-y-3">
-                                            <h3 className="text-lg font-semibold text-neutral-900">Key Features:</h3>
+                                        <div className="mt-10">
                                             <ul className="space-y-2">
                                                 {service.features.map((feature, featureIndex) => (
                                                     <li key={featureIndex} className="flex items-center gap-3">

@@ -73,11 +73,11 @@ export function CollectionStrip() {
           {collections.map((collection,) => (
             <motion.div
               key={collection.id}
-              className="flex-shrink-0 w-80 group cursor-pointer"
+              className="flex-shrink-0 w-96 group cursor-pointer"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
             >
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4">
+              <div className="relative aspect-[10/6] rounded-2xl overflow-hidden mb-4">
                 <motion.div
                   className="relative w-full h-full"
                   transition={{ duration: 0.3 }}

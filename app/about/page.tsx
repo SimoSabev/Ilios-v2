@@ -23,28 +23,23 @@ export default function AboutPage() {
     const achievements = [
         {
             icon: Award, // Could represent recognition or premium quality
-            label: "Interior Décor Selection",
+            label: "Sourcing & Space Optimization",
             image: "/About_Cards_1.png",
         },
         {
             icon: LineSquiggle, // Tools for materials or craftsmanship
-            label: "Premium Materials’ Supply",
-            image: "/About_Cards_2.png",
-        },
-        {
-            icon: Layers, // Layering spaces or optimization
-            label: "Space Optimization",
+            label: "Materials Selection",
             image: "/About_Cards_3.jpeg",
         },
         {
-            icon: Box, // Refurbishment or organization
-            label: "Interior Refurbishment",
-            image: "/About_Cards_4.jpg",
+            icon: Layers, // Layering spaces or optimization
+            label: "Delivery & Installation",
+            image: "/About_Cards_2.png",
         },
         {
-            icon: Monitor, // Project planning or management
-            label: "Project Management",
-            image: "/About_Cards_1.png",
+            icon: Box, // Refurbishment or organization
+            label: "Interior Set Up",
+            image: "/About_Cards_4.jpg",
         },
     ]
 
@@ -117,7 +112,7 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div>
                             <Reveal>
-                                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-12">
                                     Passion for <span className="italic font-light">Excellence</span>
                                 </h2>
                             </Reveal>
@@ -272,20 +267,6 @@ export default function AboutPage() {
                                         materials to the
                                         careful consideration of natural light and flow, every detail matters.
                                     </p>
-                                </div>
-                            </Reveal>
-
-                            <Reveal delay={0.2}>
-                                <div className="mt-8">
-                                    <h3 className="text-xl font-semibold text-neutral-900 mb-4">Areas of Expertise</h3>
-                                    <div className="grid grid-cols-2 gap-3">
-                                        {expertise.map((skill, index) => (
-                                            <div key={index} className="flex items-center gap-2">
-                                                <div className="w-2 h-2 bg-[#bfaa95] rounded-full"/>
-                                                <span className="text-neutral-700">{skill}</span>
-                                            </div>
-                                        ))}
-                                    </div>
                                 </div>
                             </Reveal>
                         </div>

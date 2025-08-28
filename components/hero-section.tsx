@@ -67,7 +67,7 @@ export function HeroSection() {
       >
         <div className="container-custom text-center text-white">
           <Reveal>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold leading-none flex flex-col tracking-tight mb-6">
               <AnimatedText text="TRANSFORM SPACES" delay={0.5} />
               <br />
               <span className="italic font-light">

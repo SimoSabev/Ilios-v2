@@ -19,7 +19,7 @@ export function MaterialsSection() {
 
         {/* Content */}
         <div className="relative container-custom px-6 md:px-10 max-w-4xl text-center">
-          <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-relaxed font-light drop-shadow-lg">
+          <p className="text-white text-xl sm:text-2xl leading-relaxed font-light drop-shadow-lg">
             Whether it’s sourcing the finest materials, selecting the perfect furniture
             and accessories, or managing complex refits, we approach each project with
             care, attention to detail, and a commitment to service excellence.

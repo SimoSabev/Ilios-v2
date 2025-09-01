@@ -185,7 +185,7 @@ export default function AboutPage() {
                                     transition={{duration: 0.3}}
                                 >
                                     <Image
-                                        src="/About%20Page.jpg"
+                                        src="/AboutPage.jpg"
                                         alt="Yacht exterior seating with custom cushions"
                                         fill
                                         className="object-cover object-[50%_30%]"

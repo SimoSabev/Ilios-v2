@@ -107,7 +107,7 @@ export default function ProductsPage() {
             name: "Games",
             category: "linens",
             image:
-                "/Products%20_games.jpg",
+                "/Products%20_Games.jpg",
             description: "Wide assortment of leather products in multiple finishes and colours",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -286,7 +286,7 @@ export default function ProductsPage() {
                         </div>
                     </Reveal>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
                                 title: "Marine Grade Quality",

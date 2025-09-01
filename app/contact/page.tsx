@@ -7,7 +7,7 @@ import {Footer} from "@/components/footer"
 import {motion} from "framer-motion"
 import {Reveal} from "@/components/reveal"
 import Image from "next/image"
-import {MapPin, Phone, Mail, Clock, Send,} from "lucide-react"
+import {Linkedin, Phone, Mail, Instagram, Send,} from "lucide-react"
 import {useState} from "react"
 
 export default function ContactPage() {
@@ -34,24 +34,26 @@ export default function ContactPage() {
 
     const contactInfo = [
         {
-            icon: MapPin,
-            title: "Studio Location",
-            details: ["Monaco Marina", "Port Hercules", "98000 Monaco"],
-        },
-        {
             icon: Phone,
             title: "Phone",
-            details: ["+377 97 97 97 97", "+33 6 12 34 56 78"],
+            details: ["+33 6 60 05 13 91"],
         },
         {
             icon: Mail,
             title: "Email",
-            details: ["hello@iliosdecor.com", "projects@iliosdecor.com"],
+            details: ["office@iliosdecor.com"],
         },
         {
-            icon: Clock,
-            title: "Working Hours",
-            details: ["Mon - Fri: 9:00 - 18:00", "Sat: 10:00 - 16:00", "Sun: By appointment"],
+            icon: Instagram,
+            title: "Instagram",
+            details: ["ilios_decor"],
+            link: "https://www.instagram.com/ilios_decor",
+        },
+        {
+            icon: Linkedin,
+            title: "LinkedIn",
+            details: ["ILIOS Decor"],
+            link: "https://www.linkedin.com/company/ilios-decor",
         },
     ]
 
@@ -73,9 +75,7 @@ export default function ContactPage() {
 
                             <Reveal delay={0.1}>
                                 <p className="text-lg text-neutral-600 mb-8">
-                                    Ready to transform your yacht into a masterpiece? Share your vision with us and
-                                    let&apos;s begin this
-                                    extraordinary journey.
+                                    A beautiful space that feels like home - elegant, comfortable, and uniquely yours.
                                 </p>
                             </Reveal>
 
@@ -181,41 +181,85 @@ export default function ContactPage() {
             {/* Contact Information Cards */}
             <section className="py-20 lg:py-32 bg-neutral-50">
                 <div className="container-custom">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {contactInfo.map((info, index) => {
+                            // Determine the href
+                            let href = info.link || "";
+                            if (info.title === "Phone") href = `tel:${info.details[0]}`;
+                            if (info.title === "Email") href = `mailto:${info.details[0]}`;
+
+                            return (
+                                <Reveal key={index} delay={index * 0.1}>
+                                    <motion.a
+                                        href={href}
+                                        target={info.title === "Phone" || info.title === "Email" ? "_self" : "_blank"}
+                                        rel={info.link ? "noopener noreferrer" : undefined}
+                                        className="bg-white p-8 rounded-2xl shadow-sm text-center hover:shadow-lg transition-all duration-300 cursor-pointer block"
+                                        whileHover={{ y: -5 }}
+                                    >
+                                        <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                            <info.icon className="w-8 h-8 text-[#bfaa95]" />
+                                        </div>
+                                        <h3 className="text-xl font-semibold text-neutral-900 mb-4">{info.title}</h3>
+                                        <div className="space-y-2">
+                                            {info.details.map((detail, detailIndex) => (
+                                                <p key={detailIndex} className="text-neutral-600">
+                                                    {detail}
+                                                </p>
+                                            ))}
+                                        </div>
+                                    </motion.a>
+                                </Reveal>
+                            )
+                        })}
+                    </div>
+                    <section className="relative w-full h-[500px] md:h-[700px] mt-16">
+                        <motion.div
+                            initial={{opacity: 0, y: 50}}
+                            whileInView={{opacity: 1, y: 0}}
+                            transition={{duration: 1, ease: "easeOut"}}
+                            viewport={{once: true, amount: 0.3}}
+                            className="relative w-full h-full"
+                        >
+                            <Image
+                                src="/Products%20-%20Cushions.jpg"
+                                alt="Project secondary showcase"
+                                fill
+                                className="object-cover object-center rounded-3xl shadow-lg"
+                                priority
+                            />
+                        </motion.div>
+                    </section>
+                </div>
+            </section>
+
+
+            {/* Call to Action */}
+            <section className="py-20 bg-neutral-900 text-white">
+                <div className="container-custom text-center">
                     <Reveal>
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
-                                Get In <span className="italic font-light">Touch</span>
-                            </h2>
-                            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                                Multiple ways to reach us. We&apos;re here to answer your questions and discuss your
-                                yacht design project.
-                            </p>
-                        </div>
+                        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                            Ready to Start Your <span className="italic font-light">Project?</span>
+                        </h2>
                     </Reveal>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {contactInfo.map((info, index) => (
-                            <Reveal key={index} delay={index * 0.1}>
-                                <motion.div
-                                    className="bg-white p-8 rounded-2xl shadow-sm text-center hover:shadow-lg transition-all duration-300"
-                                    whileHover={{y: -5}}
-                                >
-                                    <div
-                                        className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                        <info.icon className="w-8 h-8 text-[#bfaa95]"/>
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-neutral-900 mb-4">{info.title}</h3>
-                                    <div className="space-y-2">
-                                        {info.details.map((detail, detailIndex) => (
-                                            <p key={detailIndex} className="text-neutral-600">
-                                                {detail}
-                                            </p>
-                                        ))}
-                                    </div>
-                                </motion.div>
-                            </Reveal>
-                        ))}
-                    </div>
+                    <Reveal delay={0.1}>
+                        <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                            Contact us today to discuss your yacht design needs and discover how we can bring your
+                            vision to life.
+                        </p>
+                    </Reveal>
+
+                    <Reveal delay={0.2}>
+                        <motion.a
+                            href="#contact"
+                            className="inline-flex items-center gap-2 bg-white text-neutral-900 px-8 py-4 rounded-full font-semibold hover:bg-neutral-100 transition-colors"
+                            whileHover={{scale: 1.05}}
+                            whileTap={{scale: 0.95}}
+                        >
+                            Get In Touch
+                        </motion.a>
+                    </Reveal>
                 </div>
             </section>
             <Footer/>

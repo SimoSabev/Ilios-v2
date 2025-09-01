@@ -22,7 +22,7 @@ type Project = {
 }
 
 export default function ProjectsPage() {
-    const [selectedCategory, ] = useState("all")
+    const [selectedCategory,] = useState("all")
     const [, setSelectedProject] = useState<Project | null>(null)
 
     const categories = [
@@ -117,9 +117,10 @@ export default function ProjectsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"/>
 
                 <div className="absolute top-4 left-4">
-          <span className="bg-white/90 backdrop-blur-sm text-neutral-900 px-3 py-1 rounded-full text-xs font-semibold">
-            {project.year}
-          </span>
+                  <span
+                      className="bg-white/90 backdrop-blur-sm text-neutral-900 px-3 py-1 rounded-full text-xs font-semibold">
+                    {project.year}
+                  </span>
                 </div>
 
                 <div
@@ -164,10 +165,10 @@ export default function ProjectsPage() {
                     transition={{duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98]}}
                 >
                     <Image
-                        src="/Projects%20Page.jpg"
+                        src="/Services%20Page2.png"
                         alt="Luxury yacht interior design - elegant dining room with sophisticated lighting"
                         fill
-                        className="object-cover object-[50%_25%]"
+                        className="object-cover object-[50%_100%]"
                         priority
                         sizes="100vw"
                     />
@@ -179,36 +180,23 @@ export default function ProjectsPage() {
                     className="relative z-10 h-full flex items-center justify-center"
                     style={{y: contentY, opacity: contentOpacity}}
                 >
-                    <div className="container-custom text-center text-white">
-                        <Reveal>
-                            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none tracking-tight mb-6">
-                                Project
-                                <br/>
-                                <span className="italic font-light">Portfolio</span>
-                            </h1>
-                        </Reveal>
-
-                        <Reveal delay={0.2}>
-                            <motion.p
-                                className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"
-                                initial={{opacity: 0, y: 20}}
-                                animate={{opacity: 1, y: 0}}
-                                transition={{duration: 0.8, delay: 0.7, ease: [0.21, 0.47, 0.32, 0.98]}}
-                            >
-                                Explore our collection of luxury yacht design projects, each showcasing our commitment
-                                to excellence and attention to detail in creating extraordinary maritime experiences.
-                            </motion.p>
-                        </Reveal>
-                    </div>
                 </motion.div>
             </section>
+
+            <Reveal className={"w-full flex justify-center items-center"}>
+                <h2 className="text-xl max-w-7xl lg:text-2xl text-center p-12 w-full text-neutral-900 mb-6">
+                    Completed projects with private and corporate clients, through a close collaboration with Dahlgren
+                    Duck and during years of work experience at Boutsen Design Monaco.
+                </h2>
+            </Reveal>
 
             {/* Projects Gallery */}
             <section className="py-20 lg:py-32 bg-neutral-50">
                 <div className="container-custom space-y-20">
                     {projects.map((project, index) => (
                         <Reveal key={index} delay={index * 0.1}>
-                            <div className="bg-gradient-to-r from-white via-white to-[#fff9f1] rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all border-l-8 border-[#bfaa95]">
+                            <div
+                                className="bg-gradient-to-r from-white via-white to-[#fff9f1] rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all border-l-8 border-[#bfaa95]">
                                 {/* Category Title */}
                                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#bfaa95] mb-3">{project.category}</h2>
 
@@ -232,8 +220,6 @@ export default function ProjectsPage() {
             </section>
 
 
-
-
             {/* Stats Section */}
             <section className="py-20 bg-neutral-50">
                 <div className="container-custom">
@@ -243,18 +229,25 @@ export default function ProjectsPage() {
                                 Project <span className="italic font-light">Achievements</span>
                             </h2>
                             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                                Our portfolio represents years of dedication to creating exceptional yacht experiences
-                                worldwide.
+                                Our portfolio represents years of dedication to creating exceptional environments at
+                                sea, on land and in the air
                             </p>
                         </div>
                     </Reveal>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            {number: "300+", label: "Yachts Designed", description: "From 30m to 150m superyachts"},
-                            {number: "50+", label: "Countries", description: "International project delivery"},
-                            {number: "15+", label: "Years Experience", description: "Luxury yacht design expertise"},
-                            {number: "200+", label: "Happy Clients", description: "Satisfied yacht owners worldwide"},
+                            {
+                                number: "30+",
+                                label: "Delivered Projects",
+                                description: "Yachting, Private Aviation, Residences, Hospitality"
+                            },
+                            {number: "15+", label: "Countries", description: "International project delivery"},
+                            {
+                                number: "10+",
+                                label: "Years Experience",
+                                description: "Procurement & Interior Enhancement"
+                            },
                         ].map((stat, index) => (
                             <Reveal key={index} delay={index * 0.1}>
                                 <motion.div
@@ -269,39 +262,26 @@ export default function ProjectsPage() {
                             </Reveal>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* Call to Action */}
-            <section className="py-20 bg-neutral-900 text-white">
-                <div className="container-custom text-center">
-                    <Reveal>
-                        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                            Ready for Your <span className="italic font-light">Next Project?</span>
-                        </h2>
-                    </Reveal>
-
-                    <Reveal delay={0.1}>
-                        <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Let&apos;s create something extraordinary together. Contact us to discuss your yacht design
-                            vision and join our
-                            portfolio of satisfied clients.
-                        </p>
-                    </Reveal>
-
-                    <Reveal delay={0.2}>
-                        <motion.a
-                            href="#contact"
-                            className="inline-flex items-center gap-2 bg-white text-neutral-900 px-8 py-4 rounded-full font-semibold hover:bg-neutral-100 transition-colors"
-                            whileHover={{scale: 1.05}}
-                            whileTap={{scale: 0.95}}
+                    {/* Secondary Image Section */}
+                    <section className="relative w-full h-[500px] md:h-[700px] mt-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="relative w-full h-full"
                         >
-                            Start Your Project
-                        </motion.a>
-                    </Reveal>
+                            <Image
+                                src="/Projects_Bottom.png"
+                                alt="Project secondary showcase"
+                                fill
+                                className="object-cover object-center rounded-3xl shadow-lg"
+                                priority
+                            />
+                        </motion.div>
+                    </section>
                 </div>
             </section>
-
             <Footer/>
         </main>
     )

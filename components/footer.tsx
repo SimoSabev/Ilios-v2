@@ -14,10 +14,12 @@ export function Footer() {
   ]
 
   return (
-      <footer className="bg-[#bfaa95] border-t border-white/[0.02] mt-16" id="contact">
-        <div className="container-custom py-16 lg:py-20">
+      <footer className="bg-neutral-200 relative overflow-hidden py-10" id="contact">
+        <div className="absolute inset-0 bg-neutral-50/50" />
+
+        <div className="container-custom relative py-16 lg:py-20">
           {/* Quick Links Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-5 gap-8 lg:gap-12 mb-12 text-center sm:text-left">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 lg:gap-12 mb-12 text-center sm:text-left">
             {quickLinks.map((link, index) => (
                 <motion.div
                     key={link.name}
@@ -28,7 +30,7 @@ export function Footer() {
                 >
                   <a
                       href={link.href}
-                      className="text-white hover:text-neutral-900 transition-colors duration-200 group inline-flex items-center"
+                      className="text-neutral-900 hover:text-neutral-900 text-lg font-light tracking-wide transition-colors duration-200 group inline-flex items-center justify-center sm:justify-start"
                   >
                     {link.name}
                     <ArrowUpRight
@@ -42,15 +44,15 @@ export function Footer() {
 
           {/* Bottom Section */}
           <motion.div
-              className="pt-8 pb-4 border-t border-neutral-200 flex justify-center items-center"
+              className="pt-6 border-t border-neutral-900 flex justify-center items-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
           >
-            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-white text-center">
-              <p>&copy; {currentYear} Ilios Decor. All rights reserved.</p>
-            </div>
+            <p className="text-sm text-neutral-900 tracking-wide">
+              &copy; {currentYear} Ilios Decor. All rights reserved.
+            </p>
           </motion.div>
         </div>
       </footer>

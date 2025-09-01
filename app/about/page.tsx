@@ -66,7 +66,7 @@ export default function AboutPage() {
                     transition={{duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98]}}
                 >
                     <Image
-                        src="/About%20Page.jpg"
+                        src="/About_Page.png"
                         alt="Luxury yacht interior design - elegant dining room with sophisticated lighting"
                         fill
                         className="object-cover object-[50%_25%]"
@@ -131,13 +131,6 @@ export default function AboutPage() {
                                         various aspects of creating, maintaining and refurbishing the interior of
                                         numerous luxury assets.
                                     </p>
-                                    <p>
-                                        At ILIOS Décor, our vocation is to assist clients discover personalized styling
-                                        solutions that perfectly reflect their unique tastes while ensuring their spaces
-                                        are both functional and inviting. Whether it’s sourcing the finest materials,
-                                        selecting the perfect furniture, or managing complex refits, we approach each
-                                        project with care, attention to detail, and a commitment to service excellence.
-                                    </p>
                                 </div>
                             </Reveal>
                         </div>
@@ -168,59 +161,16 @@ export default function AboutPage() {
                 <div className="container-custom">
                     {/* Section Header */}
                     <Reveal>
-                        <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 text-center mb-4">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 text-center">
                             Experience & <span className="italic font-light">Expertise</span>
                         </h2>
-                        <p className="text-lg lg:text-xl font-light text-neutral-700 text-center max-w-3xl mx-auto mb-16">
-                            15+ years of experience sourcing, supplying, curating, and maintaining exquisite interiors for luxury yachts and high-end properties.
+                        <p className="text-lg lg:text-xl font-light text-neutral-700 text-center max-w-3xl mx-auto mt-12">
+                            10+ Years Experience in sourcing, supplying, setting-up, curating and maintaining various
+                            Interiors.
                         </p>
                     </Reveal>
-
-                    {/* Areas of Expertise Header */}
-                    <Reveal>
-                        <h3 className="text-3xl lg:text-4xl font-semibold text-neutral-900 text-center mb-12">
-                            Areas of Expertise
-                        </h3>
-                    </Reveal>
-
-                    {/* Expertise Cards Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {achievements.map((achievement, index) => {
-
-                            return (
-                                <Reveal key={index} delay={index * 0.1}>
-                                    <motion.div
-                                        className="relative w-full h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                                        whileHover={{y: -6, scale: 1.03}}
-                                    >
-                                        {/* Background Image */}
-                                        <Image
-                                            src={achievement.image}
-                                            alt={achievement.label}
-                                            fill
-                                            className="object-cover"
-                                            priority
-                                        />
-                                        {/* Overlay */}
-                                        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6">
-                                            {/* Icon */}
-                                            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-white/20 mb-4">
-                                                <achievement.icon className="w-10 h-10 text-white" />
-                                            </div>
-
-                                            {/* Label */}
-                                            <h4 className="text-xl font-semibold text-white text-center">
-                                                {achievement.label}
-                                            </h4>
-                                        </div>
-                                    </motion.div>
-                                </Reveal>
-                            )
-                        })}
-                    </div>
                 </div>
             </section>
-
 
 
             {/* Philosophy Section */}
@@ -235,10 +185,10 @@ export default function AboutPage() {
                                     transition={{duration: 0.3}}
                                 >
                                     <Image
-                                        src="/About-Bottom%20Page.jpg"
+                                        src="/About%20Page.jpg"
                                         alt="Yacht exterior seating with custom cushions"
                                         fill
-                                        className="object-cover"
+                                        className="object-cover object-[50%_30%]"
                                     />
                                 </motion.div>
                             </Reveal>
@@ -246,26 +196,19 @@ export default function AboutPage() {
 
                         <div>
                             <Reveal>
-                                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-12">
                                     Design <span className="italic font-light">Philosophy</span>
                                 </h2>
                             </Reveal>
 
                             <Reveal delay={0.1}>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
-                                    <p>
-                                        Every yacht tells a story, and my role is to ensure that story is told through
-                                        exceptional design. I
-                                        believe in creating spaces that are not just visually stunning, but also deeply
-                                        personal and
-                                        functional.
-                                    </p>
-                                    <p>
-                                        My design philosophy centers on the harmony between luxury and livability, where
-                                        every element
-                                        serves both aesthetic and practical purposes. From the selection of marine-grade
-                                        materials to the
-                                        careful consideration of natural light and flow, every detail matters.
+                                    <p className={"text-base md:text-lg"}>
+                                        At ILIOS Décor, our vocation is to assist clients discover personalized styling
+                                        solutions that perfectly reflect their unique tastes while ensuring their spaces
+                                        are both functional and inviting. Whether it’s sourcing the finest materials,
+                                        selecting the perfect furniture, or managing complex refits, we approach each
+                                        project with care, attention to detail, and a commitment to service excellence.
                                     </p>
                                 </div>
                             </Reveal>
@@ -273,36 +216,6 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-
-            {/* Call to Action */}
-            <section className="py-20 bg-neutral-900 text-white">
-                <div className="container-custom text-center">
-                    <Reveal>
-                        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                            Ready to Start Your <span className="italic font-light">Project?</span>
-                        </h2>
-                    </Reveal>
-
-                    <Reveal delay={0.1}>
-                        <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Contact us today to discuss your yacht design needs and discover how we can bring your
-                            vision to life.
-                        </p>
-                    </Reveal>
-
-                    <Reveal delay={0.2}>
-                        <motion.a
-                            href="#contact"
-                            className="inline-flex items-center gap-2 bg-white text-neutral-900 px-8 py-4 rounded-full font-semibold hover:bg-neutral-100 transition-colors"
-                            whileHover={{scale: 1.05}}
-                            whileTap={{scale: 0.95}}
-                        >
-                            Get In Touch
-                        </motion.a>
-                    </Reveal>
-                </div>
-            </section>
-
             <Footer/>
         </main>
     )

@@ -35,7 +35,7 @@ export default function ProductsPage() {
             name: "Bath Linen",
             category: "linens",
             image:
-                "/Bath%20Linen.png",
+                "/Bathlinen_1.png",
             description: "Multiple terry options, models, personalisation",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -43,7 +43,7 @@ export default function ProductsPage() {
             name: "Beach Towels",
             category: "linens",
             image:
-                "/Beach_Towels.png",
+                "/Deck%20Towels.jpg",
             description: "Various models, logo and pattern embroidery",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -51,7 +51,7 @@ export default function ProductsPage() {
             name: "Table Linen",
             category: "linens",
             image:
-                "/Table%20Linen.png",
+                "/TableLinen.png",
             description: "Finest cotton, linen, tailored design proposals",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -83,7 +83,7 @@ export default function ProductsPage() {
             name: "Soft Furnishings",
             category: "linens",
             image:
-                "/Soft%20Furnishings.png",
+                "/Soft%20Furnishings.jpg",
             description: "Selection of cashmere, wool and alpaca throws, made to measure rugs and curtains",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -104,10 +104,10 @@ export default function ProductsPage() {
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 11,
-            name: "Games",
+            name: "Leather Goods",
             category: "linens",
             image:
-                "/Products%20_Games.jpg",
+                "/Leather_Goods_2.jpg",
             description: "Wide assortment of leather products in multiple finishes and colours",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -115,7 +115,7 @@ export default function ProductsPage() {
             name: "Exterior Furniture & Accessories ",
             category: "linens",
             image:
-                "/Lighting.jpg",
+                "/Lightining.jpg",
             description: "Lanterns, Rugs, Umbrellas, Furniture, Planters",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -131,7 +131,7 @@ export default function ProductsPage() {
             name: "Crew Uniforms",
             category: "linens",
             image:
-                "/Products_Crew%20Uniforms.jpeg",
+                "/Products_Crew%20Uniforms2.jpg",
             description: "Modern, stylish, functional and customisable pieces",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
@@ -171,17 +171,14 @@ export default function ProductsPage() {
                     src={product.image || "/placeholder.svg"}
                     alt={product.name}
                     fill
-                    className="object-cover object-[50%_10%] group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover object-[50%_60%] group-hover:scale-105 transition-transform duration-300"
                 />
             </div>
 
             <div className="p-6">
-
-
                 <h3 className="font-semibold text-neutral-900 mb-2 group-hover:text-[#bfaa95] transition-colors">
                     {product.name}
                 </h3>
-
                 <p className="text-sm text-neutral-600 mb-4 line-clamp-2">{product.description}</p>
             </div>
         </motion.div>
@@ -205,7 +202,7 @@ export default function ProductsPage() {
                         src="/Products%20Page.jpg"
                         alt="Luxury yacht interior design - elegant dining room with sophisticated lighting"
                         fill
-                        className="object-cover object-[50%_25%]"
+                        className="object-cover object-[50%_35%]"
                         priority
                         sizes="100vw"
                     />

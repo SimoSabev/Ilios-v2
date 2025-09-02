@@ -168,10 +168,10 @@ export default function ContactPage() {
                     {/* Right Side - Hero Image */}
                     <div className="relative bg-neutral-100">
                         <Image
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Main%20TOP%20Page%20Image.jpg-7WFTJ4P3DGyzs5ICddcHiNYqVnBoYx.jpeg"
+                            src="/contact2.jpg" //https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Main%20TOP%20Page%20Image.jpg-7WFTJ4P3DGyzs5ICddcHiNYqVnBoYx.jpeg
                             alt="Luxury yacht design consultation"
                             fill
-                            className="object-cover"
+                            className="object-cover object-[50%_100%]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black/20"/>
                     </div>
@@ -179,7 +179,7 @@ export default function ContactPage() {
             </section>
 
             {/* Contact Information Cards */}
-            <section className="py-20 lg:py-32 bg-neutral-50">
+            <section className="pt-20 lg:pt-32 bg-neutral-50">
                 <div className="container-custom">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {contactInfo.map((info, index) => {
@@ -213,26 +213,28 @@ export default function ContactPage() {
                             )
                         })}
                     </div>
-                    <section className="relative w-full h-[500px] md:h-[700px] mt-16">
-                        <motion.div
-                            initial={{opacity: 0, y: 50}}
-                            whileInView={{opacity: 1, y: 0}}
-                            transition={{duration: 1, ease: "easeOut"}}
-                            viewport={{once: true, amount: 0.3}}
-                            className="relative w-full h-full"
-                        >
-                            <Image
-                                src="/Products%20-%20Cushions.jpg"
-                                alt="Project secondary showcase"
-                                fill
-                                className="object-cover object-center rounded-3xl shadow-lg"
-                                priority
-                            />
-                        </motion.div>
-                    </section>
                 </div>
             </section>
 
+            <section className="relative w-screen h-[500px] md:h-[700px] my-36">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="relative w-full h-full"
+                >
+                    <Image
+                        src="/contact_bottom.jpg"
+                        alt="Project secondary showcase"
+                        fill
+                        className="object-cover object-center shadow-lg"
+                        priority
+                    />
+                    {/* Rounded corners only on desktop */}
+                    <div className="absolute inset-0 rounded-none md:rounded-3xl overflow-hidden" />
+                </motion.div>
+            </section>
 
             {/* Call to Action */}
             <section className="py-20 bg-neutral-900 text-white">

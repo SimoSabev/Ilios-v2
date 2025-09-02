@@ -6,12 +6,13 @@ import Image from "next/image"
 import { Reveal } from "./reveal"
 
 const collections = [
-  { id: "modern-seating", name: "MODERN SEATING", image: "/Project_1.png" },
-  { id: "modular-design", name: "MODULAR DESIGN", image: "/Project_2.png" },
-  { id: "cloud-collection", name: "CLOUD COLLECTION", image: "/Project_3.png" },
-  { id: "artistic-pieces", name: "ARTISTIC PIECES", image: "/Project_4.jpg" },
-  { id: "contemporary", name: "CONTEMPORARY", image: "/Project_5.png" },
-  { id: "textural-craft", name: "TEXTURAL CRAFT", image: "/Project_6.png" },
+  { id: "modern-seating", name: "", image: "/project1.jpg" },
+  { id: "modular-design", name: "", image: "/Project_2.png" },
+  { id: "cloud-collection", name: "", image: "/Project_3.png" },
+  { id: "artistic-pieces", name: "", image: "/Project_4.jpg" },
+  { id: "contemporary", name: "", image: "/Project_5.png" },
+  { id: "textural-craft", name: "", image: "/Extra_Image.png" },
+  { id: "aerial-decor", name: "", image: "/plane_project.jpg" },
 ]
 
 export function CollectionStrip() {
@@ -23,12 +24,20 @@ export function CollectionStrip() {
 
   const x = useTransform(scrollYProgress, [0, 1], [0, -100])
 
-  const cardWidth = 384 // w-96 = 384px
+  // Responsive card width and aspect ratio
+  const getCardWidth = () => {
+    if (typeof window === "undefined") return 384
+    return window.innerWidth < 768 ? 260 : 384 // smaller width on mobile
+  }
+  const getAspectRatio = () => {
+    if (typeof window === "undefined") return 10 / 6
+    return window.innerWidth < 768 ? 12 / 16 : 10 / 6 // taller on mobile
+  }
+
+  const cardWidth = getCardWidth()
   const gap = 32
   const totalWidth = collections.length * (cardWidth + gap) - gap
   const containerWidth = typeof window !== "undefined" ? window.innerWidth : 1200
-
-  // ✅ fix: subtract container width so the last card is fully visible
   const maxDrag = Math.max(0, totalWidth - containerWidth + 64)
 
   return (
@@ -52,11 +61,15 @@ export function CollectionStrip() {
             {collections.map((collection) => (
                 <motion.div
                     key={collection.id}
-                    className="flex-shrink-0 w-96 group cursor-pointer"
+                    className="flex-shrink-0 group cursor-pointer"
+                    style={{ width: cardWidth }}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
                 >
-                  <div className="relative aspect-[10/6] rounded-2xl overflow-hidden mb-4">
+                  <div
+                      className="relative rounded-2xl overflow-hidden mb-4"
+                      style={{ aspectRatio: `${getAspectRatio()}` }}
+                  >
                     <motion.div className="relative w-full h-full">
                       <Image
                           src={collection.image || "/placeholder.svg"}
@@ -85,6 +98,27 @@ export function CollectionStrip() {
                 </motion.div>
             ))}
           </motion.div>
+
+          {/* Drag Hint Text */}
+          <div className="mt-6 flex justify-center">
+            <motion.div
+                className="text-neutral-500 text-lg md:text-2xl font-semibold flex items-center gap-2 select-none"
+                animate={{ x: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            >
+              <span>Drag to explore the projects</span>
+              <motion.span
+                  className="inline-block"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+              >
+                ➤
+              </motion.span>
+            </motion.div>
+          </div>
+          {/*<div className="text-center mt-8">*/}
+          {/*  <p className="text-sm text-neutral-500">← Drag to explore collections →</p>*/}
+          {/*</div>*/}
         </div>
       </section>
   )

@@ -165,14 +165,14 @@ export default function ProjectsPage() {
                     transition={{duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98]}}
                 >
                     <Image
-                        src="/Services%20Page2.png"
+                        src="/Projects_Bottom.png"
                         alt="Luxury yacht interior design - elegant dining room with sophisticated lighting"
                         fill
                         className="object-cover object-[50%_100%]"
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-black/40"/>
+                    <div className="absolute inset-0"/>
                 </motion.div>
 
                 {/* Content */}
@@ -272,10 +272,10 @@ export default function ProjectsPage() {
                             className="relative w-full h-full"
                         >
                             <Image
-                                src="/Projects_Bottom.png"
+                                src="/Services%20Page2.png"
                                 alt="Project secondary showcase"
                                 fill
-                                className="object-cover object-center rounded-3xl shadow-lg"
+                                className="object-cover object-[50%_100%] rounded-3xl shadow-lg"
                                 priority
                             />
                         </motion.div>

@@ -204,7 +204,7 @@ export default function ServicesPage() {
                                                 {service.images?.map((img, imgIndex) => (
                                                     <motion.div
                                                         key={imgIndex}
-                                                        className="relative aspect-[4/3] rounded-2xl overflow-hidden"
+                                                        className="relative w-[80%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden"
                                                         whileHover={{scale: 1.02}}
                                                         transition={{duration: 0.3}}
                                                     >
@@ -227,7 +227,7 @@ export default function ServicesPage() {
                                             </div>
                                         ) : (
                                             <motion.div
-                                                className="relative aspect-[4/3] rounded-2xl overflow-hidden"
+                                                className="relative w-[80%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden"
                                                 whileHover={{scale: 1.02}}
                                                 transition={{duration: 0.3}}
                                             >
@@ -235,7 +235,7 @@ export default function ServicesPage() {
                                                     src={service.image || "/placeholder.svg"}
                                                     alt={`${service.title} showcase`}
                                                     fill
-                                                    className="object-cover"
+                                                    className="object-contain"
                                                 />
                                                 <div
                                                     className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"/>

@@ -171,7 +171,7 @@ export default function ProductsPage() {
                     src={product.image || "/placeholder.svg"}
                     alt={product.name}
                     fill
-                    className="object-cover object-[50%_50%] group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover object-[50%_10%] group-hover:scale-105 transition-transform duration-300"
                 />
             </div>
 
@@ -309,28 +309,31 @@ export default function ProductsPage() {
                         ].map((feature, index) => (
                             <Reveal key={index} delay={index * 0.1}>
                                 <motion.div
-                                    className="text-center p-6 w-full bg-white rounded-xl shadow-sm"
+                                    className="flex flex-col justify-between text-center p-6 w-full min-h-48 bg-white rounded-xl shadow-sm"
                                     whileHover={{ y: -5 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <h3 className="text-xl font-semibold text-neutral-900 mb-3">
-                                        {feature.title}
-                                    </h3>
-                                    {Array.isArray(feature.description) ? (
-                                        <ul className="text-neutral-600 leading-relaxed flex flex-col space-y-1 w-full">
-                                            {feature.description.map((item, i) => (
-                                                <li key={i} className="text-left">{item}</li>
-                                            ))}
-                                        </ul>
-                                    ) : (
-                                        <p className="text-neutral-600 text-left leading-relaxed">
-                                            {feature.description}
-                                        </p>
-                                    )}
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-neutral-900 mb-3">
+                                            {feature.title}
+                                        </h3>
+                                        {Array.isArray(feature.description) ? (
+                                            <ul className="text-neutral-600 leading-relaxed flex flex-col space-y-1 w-full">
+                                                {feature.description.map((item, i) => (
+                                                    <li key={i} className="text-left">{item}</li>
+                                                ))}
+                                            </ul>
+                                        ) : (
+                                            <p className="text-neutral-600 text-left leading-relaxed">
+                                                {feature.description}
+                                            </p>
+                                        )}
+                                    </div>
                                 </motion.div>
                             </Reveal>
                         ))}
                     </div>
+
                 </div>
             </section>
 

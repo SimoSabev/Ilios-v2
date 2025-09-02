@@ -26,8 +26,8 @@ export default function ProductsPage() {
             name: "Bed Linen",
             category: "linens",
             image:
-                "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Products%20-%20Linen.jpg-Sc4mE3k83swQdskrycXFVIXwM1zEif.jpeg",
-            description: "Variety of styles, thread counts, personalisation",
+                "/Products%20-%20Linen.jpg",
+            description: "Variety of styles, thread counts, colours & personalisation options",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         },
         {
@@ -36,7 +36,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/Bathlinen_1.png",
-            description: "Multiple terry options, models, personalisation",
+            description: "Multiple terry options, colours, models & personalisation options",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 3,
@@ -44,7 +44,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/Deck%20Towels.jpg",
-            description: "Various models, logo and pattern embroidery",
+            description: "Various models, colours, logo and pattern embroidery",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 4,
@@ -52,7 +52,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/TableLinen.png",
-            description: "Finest cotton, linen, tailored design proposals",
+            description: "Made from the finest cotton and linen, tailored design proposals to match any dining set",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 5,
@@ -60,7 +60,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/Tableware.jpg",
-            description: "Extensive variety of chinaware, glassware and cutlery in a wide price range to suit every budget",
+            description: "Extensive variety of chinaware, glassware and cutlery in different price ranges to suit every budget",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 6,
@@ -92,7 +92,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/Products%20-%20Cushions.jpg",
-            description: "Bespoke cushions made from an extensive assortment of indoor and outdoor fabrics, suitable inner-foams",
+            description: "Bespoke cushions made from an extensive assortment of indoor and outdoor fabrics",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 10,
@@ -100,7 +100,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/Hangers.jpg",
-            description: "Available in multiple finishes, sizes and models",
+            description: "High quality wooden hangers, available in multiple finishes, thickness, sizes and models",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 11,
@@ -108,7 +108,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/Leather_Goods_2.jpg",
-            description: "Wide assortment of leather products in multiple finishes and colours",
+            description: "Wide assortment of leather products in multiple finishes & colours, logo customisation ",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 12,
@@ -116,7 +116,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/Lightining.jpg",
-            description: "Lanterns, Rugs, Umbrellas, Furniture, Planters",
+            description: "Variety of exterior loose furniture pieces, lanterns, rugs, umbrellas",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 13,
@@ -132,7 +132,7 @@ export default function ProductsPage() {
             category: "linens",
             image:
                 "/Products_Crew%20Uniforms2.jpg",
-            description: "Modern, stylish, functional and customisable pieces",
+            description: "Stylish, functional and customisable pieces, made from breathable and sustainable materials ",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 15,
@@ -206,7 +206,7 @@ export default function ProductsPage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-black/40"/>
+                    <div className="absolute inset-0"/>
                 </motion.div>
 
                 {/* Content */}
@@ -274,11 +274,12 @@ export default function ProductsPage() {
                     <Reveal>
                         <div className="text-center mb-16">
                             <h3 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
-                                Why Choose Our <span className="italic font-light">Products</span>
+                                Why Choose Our <span className="italic font-light">Products?</span>
                             </h3>
                             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                                Our rigorous selection process prioritizes three core principles: uncompromising
-                                quality, proven durability, and marine environmental suitability.
+                                Our meticulous selection process of all the proposed products and materials prioritizes
+                                three core principles: uncompromising quality, aesthetical functionality and marine
+                                environmental suitability.
                             </p>
                         </div>
                     </Reveal>
@@ -286,7 +287,7 @@ export default function ProductsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
-                                title: "Marine Grade Quality",
+                                title: "Marine Environment in Mind",
                                 description: [
                                     "Saltwater and UV tolerance",
                                     "Corrosion resistance",
@@ -296,19 +297,19 @@ export default function ProductsPage() {
                             {
                                 title: "Premium Materials",
                                 description:
-                                    "Carefully sourced from the finest suppliers worldwide.",
+                                    "Carefully sourced from the finest suppliers worldwide to meet superior standards for durability, performance and aesthetics. ",
                             },
                             {
                                 title: "Customisable Options",
                                 description:
-                                    "Extensive range of customisable products to match specific design and requirements. ",
+                                    "Extensive range of customisable products offered to match specific design, colour pallet and budget requirements.",
                             },
                         ].map((feature, index) => (
                             <Reveal key={index} delay={index * 0.1}>
                                 <motion.div
                                     className="flex flex-col justify-between text-center p-6 w-full min-h-48 bg-white rounded-xl shadow-sm"
-                                    whileHover={{ y: -5 }}
-                                    transition={{ duration: 0.3 }}
+                                    whileHover={{y: -5}}
+                                    transition={{duration: 0.3}}
                                 >
                                     <div>
                                         <h3 className="text-xl font-semibold text-neutral-900 mb-3">
@@ -339,13 +340,13 @@ export default function ProductsPage() {
                 <div className="container-custom text-center">
                     <Reveal>
                         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                           Looking for <span className="italic font-light">Bespoke Products?</span>
+                            Looking for <span className="italic font-light">Bespoke Products?</span>
                         </h2>
                     </Reveal>
 
                     <Reveal delay={0.1}>
                         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Contact us to discuss custom product solutions tailored specifically for your yacht&apos;s
+                            Contact us to discuss custom product solutions, tailored specifically for your yacht&apos;s
                             unique requirements.
                         </p>
                     </Reveal>

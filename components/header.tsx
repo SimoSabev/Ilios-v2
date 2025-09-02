@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -21,8 +22,8 @@ export function Header() {
     <motion.header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        "backdrop-blur-md border-b border-white/[0.02]",
-        isScrolled ? "bg-white/[0.02]" : "bg-white/[0.02]",
+        "backdrop-blur-md border-b border-white",
+        isScrolled ? "bg-white" : "bg-white",
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -31,16 +32,27 @@ export function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-12 lg:h-16 relative">
           {/* Logo */}
-          <motion.div className="flex-shrink-0" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+          <motion.div
+              className="flex-shrink-0"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+          >
             <Link
-              href="/"
-              className={cn(
-                "text-xl lg:text-2xl font-bold tracking-tight transition-colors",
-                isScrolled ? "text-neutral-900 hover:text-neutral-700" : "text-white hover:text-white/80",
-              )}
-              aria-label="Ilios Decor Home"
+                href="/"
+                className={cn(
+                    "transition-opacity flex items-center",
+                    isScrolled ? "opacity-100 hover:opacity-80" : "opacity-90 hover:opacity-70"
+                )}
+                aria-label="Ilios Decor Home"
             >
-              ILIOS DECOR
+              <Image
+                  src="/logo.jpg" // must be inside your /public folder
+                  alt="Ilios Decor Logo"
+                  width={120} // adjust size
+                  height={40} // adjust size
+                  priority // ensures it loads fast (for nav/logo)
+                  className="h-8 w-auto lg:h-10"
+              />
             </Link>
           </motion.div>
 
@@ -48,8 +60,8 @@ export function Header() {
             <Link
               href="/about"
               className={cn(
-                "text-sm font-medium transition-colors hover:text-white/80",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90",
+                "text-sm font-medium transition-colors hover:text-neutral-900",
+                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "",
               )}
             >
               About
@@ -57,8 +69,8 @@ export function Header() {
             <Link
               href="/services"
               className={cn(
-                "text-sm font-medium transition-colors hover:text-white/80",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90",
+                "text-sm font-medium transition-colors hover:text-neutral-900",
+                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "",
               )}
             >
               Services
@@ -66,8 +78,8 @@ export function Header() {
             <Link
               href="/products"
               className={cn(
-                "text-sm font-medium transition-colors hover:text-white/80",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90",
+                "text-sm font-medium transition-colors hover:text-neutral-900",
+                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "",
               )}
             >
               Products
@@ -75,8 +87,8 @@ export function Header() {
             <Link
               href="/projects"
               className={cn(
-                "text-sm font-medium transition-colors hover:text-white/80",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90",
+                "text-sm font-medium transition-colors hover:text-neutral-900",
+                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "",
               )}
             >
               Projects
@@ -84,8 +96,8 @@ export function Header() {
             <Link
               href="/contact"
               className={cn(
-                "text-sm font-medium transition-colors hover:text-white/80",
-                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90",
+                "text-sm font-medium transition-colors hover:text-neutral-900",
+                isScrolled ? "text-neutral-700 hover:text-neutral-900" : "",
               )}
             >
               Contact

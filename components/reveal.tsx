@@ -14,11 +14,11 @@ export function Reveal({ children, delay = 0, className }: RevealProps) {
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-100px", amount: 0.3 }} // animate every time in view
+            viewport={{ once: true }} // ✅ plays once per mount
             transition={{
-                duration: 0.6,
+                duration: 0.4,
                 delay,
-                ease: [0.21, 0.47, 0.32, 0.98],
+                ease: [0.4, 0, 0.2, 1],
             }}
             className={className}
         >

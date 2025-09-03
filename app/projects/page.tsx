@@ -165,7 +165,7 @@ export default function ProjectsPage() {
                     transition={{duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98]}}
                 >
                     <Image
-                        src="/Projects_Bottom.png"
+                        src="/Services%20Page2.png"
                         alt="Luxury yacht interior design - elegant dining room with sophisticated lighting"
                         fill
                         className="object-cover object-[50%_100%]"
@@ -230,7 +230,7 @@ export default function ProjectsPage() {
                             </h2>
                             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
                                 Our portfolio represents years of dedication to creating exceptional environments at
-                                sea, on land and in the air
+                                sea, on land and in the air.
                             </p>
                         </div>
                     </Reveal>
@@ -272,7 +272,7 @@ export default function ProjectsPage() {
                             className="relative w-full h-full"
                         >
                             <Image
-                                src="/Services%20Page2.png"
+                                src="/Projects_Bottom.png"
                                 alt="Project secondary showcase"
                                 fill
                                 className="object-cover object-[50%_100%] rounded-3xl shadow-lg"

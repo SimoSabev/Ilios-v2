@@ -144,8 +144,8 @@ export default function ServicesPage() {
                 ></motion.div>
             </section>
 
-            <Reveal className={"w-full flex justify-center items-center"}>
-                <h2 className="text-xl max-w-[175vh] lg:text-2xl text-center p-12 w-full text-neutral-900 mb-6">
+            <Reveal className={"w-full flex justify-center items-center text-center "}>
+                <h2 className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
                     Our services expand from New Build full interior setup, FFE & Owner’s
                     supply, interior support for refit projects, upholstery, furniture
                     restoration to crew uniforms and guest amenities. From the initial
@@ -162,39 +162,46 @@ export default function ServicesPage() {
                         {services.map((service, index) => (
                             <div
                                 key={index}
-                                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
-                                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                                }`}
+                                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 ${
+                                    service.title === "Soft Refurbishment" ? "items-center" : "items-end"
+                                } ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
                             >
-                                {/* Left Content */}
+
+                            {/* Left Content */}
                                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                                     <Reveal>
-                                        <div
-                                            className="w-16 h-16 bg-gray-200/70 rounded-full flex items-center justify-center mb-6">
-                                            <service.icon className="w-8 h-8 text-[#bfaa95]"/>
-                                        </div>
-                                    </Reveal>
-                                    <Reveal delay={0.1}>
-                                        <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
-                                            {service.title}
-                                        </h2>
-                                    </Reveal>
-                                    <Reveal delay={0.3}>
-                                        <div className="mt-10">
-                                            <ul className="space-y-2">
-                                                {service.features.map((feature, featureIndex) => (
-                                                    <li
-                                                        key={featureIndex}
-                                                        className="flex items-center gap-3"
-                                                    >
-                                                        <div className="w-2 h-2 bg-[#bfaa95] rounded-full"/>
-                                                        <span className="text-neutral-700">{feature}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                        <div className="flex items-start gap-6">
+                                            {/* Icon */}
+                                            <div className="w-16 h-16 bg-gray-200/70 rounded-full flex items-center justify-center shrink-0">
+                                                <service.icon className="w-8 h-8 text-[#bfaa95]" />
+                                            </div>
+
+                                            {/* Text content */}
+                                            <div>
+                                                <Reveal delay={0.1}>
+                                                    <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                                                        {service.title}
+                                                    </h2>
+                                                </Reveal>
+
+                                                <Reveal delay={0.3}>
+                                                    <ul className="space-y-2 mt-10">
+                                                        {service.features.map((feature, featureIndex) => (
+                                                            <li
+                                                                key={featureIndex}
+                                                                className="flex items-center gap-3"
+                                                            >
+                                                                <div className="w-2 h-2 bg-[#bfaa95] rounded-full" />
+                                                                <span className="text-neutral-700">{feature}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </Reveal>
+                                            </div>
                                         </div>
                                     </Reveal>
                                 </div>
+
 
                                 {/* Right Content (Images) */}
                                 <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
@@ -204,7 +211,7 @@ export default function ServicesPage() {
                                                 {service.images?.map((img, imgIndex) => (
                                                     <motion.div
                                                         key={imgIndex}
-                                                        className="relative w-[80%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden"
+                                                        className="relative w-[70%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden"
                                                         whileHover={{scale: 1.02}}
                                                         transition={{duration: 0.3}}
                                                     >
@@ -227,7 +234,7 @@ export default function ServicesPage() {
                                             </div>
                                         ) : (
                                             <motion.div
-                                                className="relative w-[80%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden"
+                                                className="relative w-[70%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden"
                                                 whileHover={{scale: 1.02}}
                                                 transition={{duration: 0.3}}
                                             >

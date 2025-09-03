@@ -107,18 +107,20 @@ export default function AboutPage() {
             </section>
 
             {/* Designer Story Section */}
-            <section className="py-20 lg:py-32">
+            <section className="py-16 lg:py-32">
                 <div className="container-custom">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+                        {/* Text Content */}
+                        <div className="flex flex-col justify-center text-justify">
                             <Reveal>
-                                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-12">
+                                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-8 lg:mb-12">
                                     Passion for <span className="italic font-light">Excellence</span>
                                 </h2>
                             </Reveal>
 
                             <Reveal delay={0.1}>
-                                <div className="space-y-6 text-neutral-700 leading-relaxed">
+                                <div className="space-y-6 text-neutral-700 leading-relaxed max-w-xl">
                                     <p>
                                         My name is Iliyana, and I founded ILIOS Décor with a simple yet profound
                                         mission: to blend my passion for excellence with my dedication to creating
@@ -135,26 +137,30 @@ export default function AboutPage() {
                             </Reveal>
                         </div>
 
-                        <div className="relative">
+                        {/* Image Content */}
+                        <div className="flex justify-center lg:justify-end">
                             <Reveal delay={0.3}>
                                 <motion.div
-                                    className="relative aspect-[4/5] rounded-2xl overflow-hidden"
-                                    whileHover={{scale: 1.02}}
+                                    className="relative aspect-[4/5] shadow-2xl rounded-2xl overflow-hidden w-64 sm:w-72 lg:w-96
+                                               border border-white/20 backdrop-blur-sm
+                                               hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
+                                    whileHover={{scale: 1.03}}
                                     transition={{duration: 0.3}}
                                 >
+
                                     <Image
                                         src="/BIO-Image.jpg"
                                         alt="Yacht Designer Portrait"
                                         fill
                                         className="object-cover"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"/>
                                 </motion.div>
                             </Reveal>
                         </div>
                     </div>
                 </div>
             </section>
+
 
             {/* Expertise / Collections Section */}
             <section className="py-20 bg-neutral-100">
@@ -197,7 +203,7 @@ export default function AboutPage() {
                         <div>
                             <Reveal>
                                 <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-12">
-                                    Design <span className="italic font-light">Philosophy</span>
+                                    Our <span className="italic font-light">Philosophy</span>
                                 </h2>
                             </Reveal>
 

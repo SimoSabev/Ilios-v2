@@ -247,21 +247,21 @@ export default function ContactPage() {
 
                     <Reveal delay={0.1}>
                         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Contact us today to discuss your yacht design needs and discover how we can bring your
-                            vision to life.
+                            Contact us to discuss your requirements and discover how we can bring your vision to life.
                         </p>
                     </Reveal>
 
                     <Reveal delay={0.2}>
                         <motion.a
-                            href="#contact"
+                            href="mailto:office@iliosdecor.com"
                             className="inline-flex items-center gap-2 bg-white text-neutral-900 px-8 py-4 rounded-full font-semibold hover:bg-neutral-100 transition-colors"
-                            whileHover={{scale: 1.05}}
-                            whileTap={{scale: 0.95}}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             Get In Touch
                         </motion.a>
                     </Reveal>
+
                 </div>
             </section>
             <Footer/>

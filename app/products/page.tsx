@@ -316,13 +316,13 @@ export default function ProductsPage() {
                                             {feature.title}
                                         </h3>
                                         {Array.isArray(feature.description) ? (
-                                            <ul className="text-neutral-600 leading-relaxed flex flex-col space-y-1 w-full">
+                                            <ul className="text-neutral-600 leading-relaxed text-center flex flex-col space-y-0.5 w-full">
                                                 {feature.description.map((item, i) => (
-                                                    <li key={i} className="text-left">{item}</li>
+                                                    <li key={i} className="">{item}</li>
                                                 ))}
                                             </ul>
                                         ) : (
-                                            <p className="text-neutral-600 text-left leading-relaxed">
+                                            <p className="text-neutral-600 text-center leading-relaxed">
                                                 {feature.description}
                                             </p>
                                         )}

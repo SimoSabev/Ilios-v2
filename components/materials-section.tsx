@@ -76,7 +76,7 @@ export function MaterialsSection() {
                 <div className="absolute inset-0 bg-black/30" /> {/* darker overlay */}
             </div>
 
-            <div className="absolute top-8 right-8 z-10 max-w-md hidden lg:block">
+            <div className="absolute top-20 right-8 z-10 max-w-md hidden lg:block">
                 <Reveal delay={0.3}>
                     <blockquote className="pl-0 py-4">
                         <p className="text-xl text-white leading-relaxed italic lg:text-base font-medium">

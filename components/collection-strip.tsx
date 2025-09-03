@@ -1,16 +1,16 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 import { Reveal } from "./reveal"
 
 const collections = [
   { id: "modern-seating", name: "", image: "/project1.jpg" },
-  { id: "modular-design", name: "", image: "/Project_2.png" },
   { id: "cloud-collection", name: "", image: "/Project_3.png" },
   { id: "artistic-pieces", name: "", image: "/Project_4.jpg" },
   { id: "contemporary", name: "", image: "/Project_5.png" },
+  { id: "modular-design", name: "", image: "/Services_Page2.jpg" },
   { id: "textural-craft", name: "", image: "/Extra_Image.png" },
   { id: "aerial-decor", name: "", image: "/plane_project.jpg" },
 ]
@@ -21,31 +21,36 @@ export function CollectionStrip() {
     target: containerRef,
     offset: ["start end", "end start"],
   })
-
   const x = useTransform(scrollYProgress, [0, 1], [0, -100])
 
-  // Responsive card width and aspect ratio
-  const getCardWidth = () => {
-    if (typeof window === "undefined") return 384
-    return window.innerWidth < 768 ? 260 : 384 // smaller width on mobile
-  }
-  const getAspectRatio = () => {
-    if (typeof window === "undefined") return 10 / 6
-    return window.innerWidth < 768 ? 12 / 16 : 10 / 6 // taller on mobile
-  }
+  const [windowWidth, setWindowWidth] = useState(
+      typeof window !== "undefined" ? window.innerWidth : 1200
+  )
 
-  const cardWidth = getCardWidth()
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  const cardWidth = windowWidth < 768 ? 260 : 384
   const gap = 32
   const totalWidth = collections.length * (cardWidth + gap) - gap
-  const containerWidth = typeof window !== "undefined" ? window.innerWidth : 1200
-  const maxDrag = Math.max(0, totalWidth - containerWidth + 64)
+  const maxDrag = Math.max(0, totalWidth - windowWidth + 32) // always draggable to the end
+
+  // const getAspectRatio = () => (windowWidth < 768 ? 12 / 16 : 10 / 6)
+  // Replace getAspectRatio with a fixed horizontal ratio for all screens
+  const getAspectRatio = () => 10 / 6 // same as desktop, always horizontal
+
 
   return (
       <section ref={containerRef} className="py-20 lg:py-32 overflow-hidden">
         <div className="mb-12">
           <Reveal>
             <div className="container-custom text-center">
-              <h2 className="text-neutral-900 mb-4 text-6xl font-normal">Projects</h2>
+              <h2 className="text-neutral-900 mb-4 text-6xl font-normal">
+                Projects
+              </h2>
             </div>
           </Reveal>
         </div>
@@ -68,7 +73,7 @@ export function CollectionStrip() {
                 >
                   <div
                       className="relative rounded-2xl overflow-hidden mb-4"
-                      style={{ aspectRatio: `${getAspectRatio()}` }}
+                      style={{ aspectRatio: getAspectRatio() }}
                   >
                     <motion.div className="relative w-full h-full">
                       <Image
@@ -99,7 +104,6 @@ export function CollectionStrip() {
             ))}
           </motion.div>
 
-          {/* Drag Hint Text */}
           <div className="mt-6 flex justify-center">
             <motion.div
                 className="text-neutral-500 text-lg md:text-2xl font-semibold flex items-center gap-2 select-none"
@@ -116,9 +120,6 @@ export function CollectionStrip() {
               </motion.span>
             </motion.div>
           </div>
-          {/*<div className="text-center mt-8">*/}
-          {/*  <p className="text-sm text-neutral-500">← Drag to explore collections →</p>*/}
-          {/*</div>*/}
         </div>
       </section>
   )

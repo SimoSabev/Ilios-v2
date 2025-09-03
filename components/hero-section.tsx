@@ -75,14 +75,14 @@ export function HeroSection() {
             className="relative z-10 h-full flex items-center justify-center"
             style={{ y: contentY, opacity: contentOpacity }}
         >
-          <div className="container-custom text-center text-white">
+          <div className=" text-center text-white">
             <Reveal>
-              <h1 className="text-6xl font-bold leading-none flex flex-col tracking-tight mb-6">
+              <h1 className="text-3xl sm:text-6xl font-bold leading-none flex flex-col tracking-tight mb-6">
                 <AnimatedText text="TRANSFORM SPACES" delay={0.5} />
                 <br />
-                <span className="italic font-light">
-                <AnimatedText text="CREATE DREAMS" delay={1.1} />
-              </span>
+                <span className="italic font-light text-3xl sm:text-4xl">
+                  <AnimatedText text="CREATE DREAMS" delay={1.1} />
+                </span>
               </h1>
             </Reveal>
           </div>

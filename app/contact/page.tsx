@@ -47,13 +47,13 @@ export default function ContactPage() {
             icon: Instagram,
             title: "Instagram",
             details: ["ilios_decor"],
-            link: "https://www.linkedin.com/in/ilios",
+            link: "https://www.instagram.com/ilios_decor",
         },
         {
             icon: Linkedin,
             title: "LinkedIn",
             details: ["ILIOS Decor"],
-            link: "https://www.linkedin.com/company/ilios-decor",
+            link: "https://www.linkedin.com/in/ilios",
         },
     ]
 

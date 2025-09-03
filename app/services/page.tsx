@@ -36,7 +36,7 @@ export default function ServicesPage() {
                 "Coordinating logistics",
                 "Delivery and after-sale service",
             ],
-            image: "/Services_Page.png",
+            image: "/Services_Page1.jpg",
         },
         {
             icon: Settings,
@@ -71,33 +71,6 @@ export default function ServicesPage() {
                 "Handover and post-project support",
             ],
             image: "/About_Cards_2.png",
-        },
-    ]
-
-    const process = [
-        {
-            step: "01",
-            title: "Consultation",
-            description:
-                "Initial meeting to understand your vision, lifestyle, and requirements for your yacht design project.",
-        },
-        {
-            step: "02",
-            title: "Concept Development",
-            description:
-                "Creating detailed design concepts and 3D visualizations to bring your vision to life.",
-        },
-        {
-            step: "03",
-            title: "Design Refinement",
-            description:
-                "Collaborative refinement of designs, material selection, and technical specifications.",
-        },
-        {
-            step: "04",
-            title: "Implementation",
-            description:
-                "Professional project management and installation with attention to every detail.",
         },
     ]
 
@@ -145,7 +118,7 @@ export default function ServicesPage() {
             </section>
 
             <Reveal className={"w-full flex justify-center items-center text-center "}>
-                <h2 className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+                <h2 className="text-xl py-6 text-neutral-600 max-w-4xl mx-auto leading-relaxed">
                     Our services expand from New Build full interior setup, FFE & Owner’s
                     supply, interior support for refit projects, upholstery, furniture
                     restoration to crew uniforms and guest amenities. From&nbsp;the initial

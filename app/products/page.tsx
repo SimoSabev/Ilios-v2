@@ -218,7 +218,7 @@ export default function ProductsPage() {
             </section>
 
             <Reveal className={"w-full flex justify-center items-center"}>
-                <h2 className="text-xl text-center text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+                <h2 className="text-xl text-center py-6 text-neutral-600 max-w-4xl mx-auto leading-relaxed">
                     Our product offerings range from well-known luxury brands, carefully sourced decorative objects and
                     rare art pieces from the world’s finest artisans, along with crew-friendly supplies, crew uniforms
                     and guest amenities.
@@ -290,7 +290,7 @@ export default function ProductsPage() {
                                 title: "Marine Environment in Mind",
                                 description: [
                                     "Saltwater and UV tolerance",
-                                    "Corrosion resistance",
+                                    "Corrosion resistance materials",
                                     "Humidity and moisture protection",
                                 ],
                             },

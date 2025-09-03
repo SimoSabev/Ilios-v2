@@ -209,7 +209,7 @@ export default function AboutPage() {
 
                             <Reveal delay={0.1}>
                                 <div className="space-y-6 text-neutral-700 leading-relaxed">
-                                    <p className={"text-base md:text-lg"}>
+                                    <p className={"text-base text-justify md:text-lg"}>
                                         At ILIOS Décor, our vocation is to assist clients discover personalized styling
                                         solutions that perfectly reflect their unique tastes while ensuring their spaces
                                         are both functional and inviting. Whether it’s sourcing the finest materials,

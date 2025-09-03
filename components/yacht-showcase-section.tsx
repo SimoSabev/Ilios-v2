@@ -43,7 +43,7 @@ export function YachtShowcaseSection() {
                             the client’s dream environment on board and at home.
                             With years of proven expertise, we specialize in sourcing and supplying high-quality
                             interior accessories and furniture tailored to your unique style and needs.
-                            Whether you are outfitting a luxury yacht or transforming your residential space, our
+                            Whether&nbsp;you are outfitting a luxury yacht or transforming your residential space, our
                             extensive network of trusted manufacturers - luxury brands, carefully sourced artisants and
                             crew-friendly suppliers - ensures we offer the finest selection of products.
                         </p>

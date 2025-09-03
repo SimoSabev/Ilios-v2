@@ -47,7 +47,7 @@ export default function ContactPage() {
             icon: Instagram,
             title: "Instagram",
             details: ["ilios_decor"],
-            link: "https://www.instagram.com/ilios_decor",
+            link: "https://www.linkedin.com/in/ilios",
         },
         {
             icon: Linkedin,

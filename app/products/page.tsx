@@ -88,7 +88,7 @@ export default function ProductsPage() {
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 9,
-            name: "Cushions",
+            name: "Scatter Cushions",
             category: "linens",
             image:
                 "/Products%20-%20Cushions.jpg",
@@ -218,7 +218,7 @@ export default function ProductsPage() {
             </section>
 
             <Reveal className={"w-full flex justify-center items-center"}>
-                <h2 className="text-xl max-w-[175vh] lg:text-2xl text-center p-12 w-full text-neutral-900 mb-6">
+                <h2 className="text-xl text-center text-neutral-600 max-w-4xl mx-auto leading-relaxed">
                     Our product offerings range from well-known luxury brands, carefully sourced decorative objects and
                     rare art pieces from the world’s finest artisans, along with crew-friendly supplies, crew uniforms
                     and guest amenities.

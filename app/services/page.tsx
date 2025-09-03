@@ -148,7 +148,7 @@ export default function ServicesPage() {
                 <h2 className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
                     Our services expand from New Build full interior setup, FFE & Owner’s
                     supply, interior support for refit projects, upholstery, furniture
-                    restoration to crew uniforms and guest amenities. From the initial
+                    restoration to crew uniforms and guest amenities. From&nbsp;the initial
                     consultation to final delivery, our personalised service and
                     consistent communication keeps you informed about your project and
                     order status every step of the way.

@@ -6,6 +6,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const quickLinks = [
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Products", href: "/products" },
@@ -19,7 +20,7 @@ export function Footer() {
 
         <div className="container-custom relative py-16 lg:py-20">
           {/* Quick Links Section */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 lg:gap-12 mb-12 text-center sm:text-left">
+          <div className="grid grid-cols-2 sm:grid-cols-6 gap-6 lg:gap-12 mb-12 text-center sm:text-left">
             {quickLinks.map((link, index) => (
                 <motion.div
                     key={link.name}

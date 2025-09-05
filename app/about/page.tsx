@@ -114,7 +114,7 @@ export default function AboutPage() {
                         {/* Text Content */}
                         <div className="flex flex-col justify-center text-justify">
                             <Reveal>
-                                <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-8 lg:mb-12">
+                                <h2 className="text-4xl lg:text-5xl font-bold text-left text-neutral-900 mb-8 lg:mb-12">
                                     Passion for <span className="italic font-light">Excellence</span>
                                 </h2>
                             </Reveal>

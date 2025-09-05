@@ -184,7 +184,7 @@ export default function ProjectsPage() {
             </section>
 
             <Reveal className={"w-full flex justify-center items-center"}>
-                <h2 className="text-xl text-center py-6 text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+                <h2 className="text-xl text-center p-6 text-neutral-600 max-w-4xl mx-auto leading-relaxed">
                     Completed projects with private and corporate clients, through a close collaboration with Dahlgren
                     Duck and during years of work experience at Boutsen Design Monaco.
                 </h2>

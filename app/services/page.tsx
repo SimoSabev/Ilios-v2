@@ -118,7 +118,7 @@ export default function ServicesPage() {
             </section>
 
             <Reveal className={"w-full flex justify-center items-center text-center "}>
-                <h2 className="text-xl py-6 text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+                <h2 className="text-xl p-6 text-neutral-600 max-w-4xl mx-auto leading-relaxed">
                     Our services expand from New Build full interior setup, FFE & Owner’s
                     supply, interior support for refit projects, upholstery, furniture
                     restoration to crew uniforms and guest amenities. From&nbsp;the initial
@@ -129,43 +129,45 @@ export default function ServicesPage() {
             </Reveal>
 
             {/* Services Grid */}
-            <section className="py-20 lg:py-32">
+            {/* Services Grid */}
+            <section className="py-16 sm:py-20 lg:py-32">
                 <div className="container-custom">
-                    <div className="space-y-32">
+                    <div className="space-y-24 sm:space-y-32">
                         {services.map((service, index) => (
                             <div
                                 key={index}
-                                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 ${
+                                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-20 ${
                                     service.title === "Soft Refurbishment" ? "items-center" : "items-end"
                                 } ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
                             >
-
-                            {/* Left Content */}
+                                {/* Left Content */}
                                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                                     <Reveal>
-                                        <div className="flex items-start gap-6">
+                                        <div className="flex items-start gap-4 sm:gap-6">
                                             {/* Icon */}
-                                            <div className="w-16 h-16 bg-gray-200/70 rounded-full flex items-center justify-center shrink-0">
-                                                <service.icon className="w-8 h-8 text-[#bfaa95]" />
+                                            <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gray-200/70 rounded-full flex items-center justify-center shrink-0">
+                                                <service.icon className="w-4 h-4 sm:w-8 sm:h-8 text-[#bfaa95]" />
                                             </div>
 
                                             {/* Text content */}
                                             <div>
                                                 <Reveal delay={0.1}>
-                                                    <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                                                    <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 sm:mb-6">
                                                         {service.title}
                                                     </h2>
                                                 </Reveal>
 
                                                 <Reveal delay={0.3}>
-                                                    <ul className="space-y-2 mt-10">
+                                                    <ul className="space-y-2 mt-6 sm:mt-10">
                                                         {service.features.map((feature, featureIndex) => (
                                                             <li
                                                                 key={featureIndex}
-                                                                className="flex items-center gap-3"
+                                                                className="flex items-start gap-3"
                                                             >
-                                                                <div className="w-2 h-2 bg-[#bfaa95] rounded-full" />
-                                                                <span className="text-neutral-700">{feature}</span>
+                                                                <div className="w-2 h-2 bg-[#bfaa95] rounded-full mt-2" />
+                                                                <span className="text-xs sm:text-sm md:text-base text-neutral-700">
+                                                                    {feature}
+                                                                </span>
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -175,7 +177,6 @@ export default function ServicesPage() {
                                     </Reveal>
                                 </div>
 
-
                                 {/* Right Content (Images) */}
                                 <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
                                     <Reveal delay={0.4}>
@@ -184,41 +185,38 @@ export default function ServicesPage() {
                                                 {service.images?.map((img, imgIndex) => (
                                                     <motion.div
                                                         key={imgIndex}
-                                                        className="relative w-[70%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden"
-                                                        whileHover={{scale: 1.02}}
-                                                        transition={{duration: 0.3}}
+                                                        className="relative w-full sm:w-[80%] lg:w-[70%] mx-auto aspect-video sm:aspect-[4/3] rounded-2xl overflow-hidden"
+                                                        whileHover={{ scale: 1.02 }}
+                                                        transition={{ duration: 0.3 }}
                                                     >
                                                         <Image
                                                             src={img}
-                                                            alt={`${
-                                                                imgIndex === 0 ? "Before" : "After"
-                                                            } - ${service.title}`}
+                                                            alt={`${imgIndex === 0 ? "Before" : "After"} - ${
+                                                                service.title
+                                                            }`}
                                                             fill
                                                             className="object-cover object-[50%_70%]"
                                                         />
-                                                        <div
-                                                            className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"/>
-                                                        <span
-                                                            className="absolute bottom-2 left-2 bg-black/60 text-white text-sm px-2 py-1 rounded">
-                                                            {imgIndex === 0 ? "Before" : "After"}
-                                                        </span>
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                                                        <span className="absolute bottom-2 left-2 bg-black/60 text-white text-xs sm:text-sm px-2 py-1 rounded">
+                        {imgIndex === 0 ? "Before" : "After"}
+                      </span>
                                                     </motion.div>
                                                 ))}
                                             </div>
                                         ) : (
                                             <motion.div
-                                                className="relative w-[70%] mx-auto aspect-[4/3] rounded-2xl overflow-hidden"
-                                                whileHover={{scale: 1.02}}
-                                                transition={{duration: 0.3}}
+                                                className="relative w-full sm:w-[80%] lg:w-[70%] mx-auto aspect-video sm:aspect-[4/3] rounded-2xl overflow-hidden"
+                                                whileHover={{ scale: 1.02 }}
+                                                transition={{ duration: 0.3 }}
                                             >
                                                 <Image
                                                     src={service.image || "/placeholder.svg"}
                                                     alt={`${service.title} showcase`}
                                                     fill
-                                                    className="object-contain"
+                                                    className="object-cover"
                                                 />
-                                                <div
-                                                    className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"/>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                                             </motion.div>
                                         )}
                                     </Reveal>
@@ -228,6 +226,7 @@ export default function ServicesPage() {
                     </div>
                 </div>
             </section>
+
 
             <Footer/>
         </main>

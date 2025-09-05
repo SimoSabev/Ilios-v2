@@ -136,11 +136,11 @@ export default function ProductsPage() {
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         }, {
             id: 15,
-            name: "Deck Mats",
+            name: "Personalised Mats",
             category: "linens",
             image:
                 "/Deck_Mats.png",
-            description: "Available in multiple colours, sizes, thickness and customisation options",
+            description: "Deck mats, interior mats, bar mats in multiple colours, sizes, thickness and customisation options",
             features: ["Egyptian Cotton", "Hand Embroidered", "Hypoallergenic", "Machine Washable"],
         },
     ]
@@ -218,7 +218,7 @@ export default function ProductsPage() {
             </section>
 
             <Reveal className={"w-full flex justify-center items-center"}>
-                <h2 className="text-xl text-center py-6 text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+                <h2 className="text-xl text-center p-6 text-neutral-600 max-w-4xl mx-auto leading-relaxed">
                     Our product offerings range from well-known luxury brands, carefully sourced decorative objects and
                     rare art pieces from the world’s finest artisans, along with crew-friendly supplies, crew uniforms
                     and guest amenities.

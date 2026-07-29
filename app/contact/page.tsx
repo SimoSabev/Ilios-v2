@@ -7,8 +7,10 @@ import {Footer} from "@/components/footer"
 import {motion} from "framer-motion"
 import {Reveal} from "@/components/reveal"
 import Image from "next/image"
-import {Linkedin, Phone, Mail, Instagram, Send,} from "lucide-react"
+import {Linkedin, Phone, Mail, Instagram, Send, CheckCircle2, AlertCircle} from "lucide-react"
 import {useState} from "react"
+
+type SubmitStatus = "idle" | "submitting" | "success" | "error"
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -17,12 +19,35 @@ export default function ContactPage() {
         phone: "",
         message: "",
         company: "",
+        website: "", // honeypot, must stay empty
     })
+    const [status, setStatus] = useState<SubmitStatus>("idle")
+    const [errorMessage, setErrorMessage] = useState("")
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // Handle form submission
-        console.log("Form submitted:", formData)
+        setStatus("submitting")
+        setErrorMessage("")
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(formData),
+            })
+
+            const data = await response.json()
+
+            if (!response.ok) {
+                throw new Error(data.error ?? "Something went wrong. Please try again.")
+            }
+
+            setStatus("success")
+            setFormData({name: "", email: "", phone: "", message: "", company: "", website: ""})
+        } catch (error) {
+            setStatus("error")
+            setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.")
+        }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -157,15 +182,42 @@ export default function ContactPage() {
                                         />
                                     </div>
 
+                                    {/* Honeypot field - hidden from real visitors, catches bots */}
+                                    <input
+                                        type="text"
+                                        name="website"
+                                        value={formData.website}
+                                        onChange={handleChange}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                        className="hidden"
+                                        aria-hidden="true"
+                                    />
+
                                     <motion.button
                                         type="submit"
-                                        className="w-full bg-neutral-900 text-white py-3.5 sm:py-4 px-6 rounded-lg font-semibold hover:bg-neutral-800 transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
+                                        disabled={status === "submitting"}
+                                        className="w-full bg-neutral-900 text-white py-3.5 sm:py-4 px-6 rounded-lg font-semibold hover:bg-neutral-800 transition-colors flex items-center justify-center gap-2 text-sm sm:text-base disabled:opacity-60 disabled:cursor-not-allowed"
+                                        whileHover={{ scale: status === "submitting" ? 1 : 1.02 }}
+                                        whileTap={{ scale: status === "submitting" ? 1 : 0.98 }}
                                     >
                                         <Send size={18} />
-                                        Send Message
+                                        {status === "submitting" ? "Sending..." : "Send Message"}
                                     </motion.button>
+
+                                    {status === "success" && (
+                                        <div className="flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3 text-sm">
+                                            <CheckCircle2 size={18} />
+                                            Thanks! Your message has been sent - we'll be in touch soon.
+                                        </div>
+                                    )}
+
+                                    {status === "error" && (
+                                        <div className="flex items-center gap-2 text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3 text-sm">
+                                            <AlertCircle size={18} />
+                                            {errorMessage}
+                                        </div>
+                                    )}
                                 </form>
                             </Reveal>
                         </div>

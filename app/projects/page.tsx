@@ -5,8 +5,7 @@ import {Footer} from "@/components/footer"
 import {motion, useScroll, useTransform} from "framer-motion"
 import {Reveal} from "@/components/reveal"
 import Image from "next/image"
-import {MapPin, Users, Maximize,} from "lucide-react"
-import {useRef, useState} from "react"
+import {useRef} from "react"
 
 type Project = {
     category: string
@@ -22,17 +21,7 @@ type Project = {
 }
 
 export default function ProjectsPage() {
-    const [selectedCategory,] = useState("all")
-    const [, setSelectedProject] = useState<Project | null>(null)
-
-    const categories = [
-        {id: "all", name: "All Projects"},
-        {id: "interior", name: "Interior Design"},
-        {id: "exterior", name: "Exterior Design"},
-        {id: "complete", name: "Complete Renovation"},
-    ]
-
-    const projects = [
+    const projects: Project[] = [
         {
             category: "Yachting",
             subtitle: "New Build FFE Supply & Interior Refit Enhancement",
@@ -83,10 +72,6 @@ export default function ProjectsPage() {
         },
     ]
 
-    const filteredProjects =
-        selectedCategory === "all" ? projects : projects.filter((p) => p.category === selectedCategory)
-
-
     const containerRef = useRef<HTMLDivElement>(null)
     const {scrollYProgress} = useScroll({
         target: containerRef,
@@ -97,58 +82,6 @@ export default function ProjectsPage() {
     const imageY = useTransform(scrollYProgress, [0, 1], [0, -50])
     const contentY = useTransform(scrollYProgress, [0, 1], [0, 100])
     const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-
-    const ProjectCard = ({project, index}: { project: Project; index: number }) => (
-        <motion.div
-            className={`group cursor-pointer ${
-                project.featured ? "md:col-span-2 md:row-span-2" : ""
-            } relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-500`}
-            whileHover={{y: -5}}
-            onClick={() => setSelectedProject(project)}
-            layout
-        >
-            <div className={`relative ${project.featured ? "aspect-[4/3]" : "aspect-square"} overflow-hidden`}>
-                <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title || "Project Image"}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"/>
-
-                <div className="absolute top-4 left-4">
-                  <span
-                      className="bg-white/90 backdrop-blur-sm text-neutral-900 px-3 py-1 rounded-full text-xs font-semibold">
-                    {project.year}
-                  </span>
-                </div>
-
-                <div
-                    className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button
-                        className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white">
-                        <Maximize size={16}/>
-                    </button>
-                </div>
-
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-[#bfaa95] transition-colors">{project.title}</h3>
-                    <p className="text-sm text-white/80 mb-3 line-clamp-2">{project.description}</p>
-
-                    <div className="flex items-center gap-4 text-xs text-white/70">
-                        <div className="flex items-center gap-1">
-                            <MapPin size={12}/>
-                            <span>{project.location}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                            <Users size={12}/>
-                            <span>{project.size}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </motion.div>
-    )
 
     return (
         <main className="min-h-screen">

@@ -208,7 +208,7 @@ export default function ContactPage() {
                                     {status === "success" && (
                                         <div className="flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3 text-sm">
                                             <CheckCircle2 size={18} />
-                                            Thanks! Your message has been sent - we'll be in touch soon.
+                                            Thanks! Your message has been sent - we&apos;ll be in touch soon.
                                         </div>
                                     )}
 
@@ -241,7 +241,39 @@ export default function ContactPage() {
             <section className="pt-16 sm:pt-20 lg:pt-32 bg-neutral-50">
                 <div className="container-custom">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                        {/* ...cards unchanged... */}
+                        {contactInfo.map((info, index) => {
+                            const Icon = info.icon
+                            const content = (
+                                <>
+                                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 shadow-sm">
+                                        <Icon size={20} className="text-neutral-900" />
+                                    </div>
+                                    <h3 className="font-semibold text-neutral-900 mb-2">{info.title}</h3>
+                                    {info.details.map((detail) => (
+                                        <p key={detail} className="text-sm text-neutral-600">
+                                            {detail}
+                                        </p>
+                                    ))}
+                                </>
+                            )
+
+                            return (
+                                <Reveal key={info.title} delay={index * 0.1}>
+                                    {info.link ? (
+                                        <a
+                                            href={info.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                                        >
+                                            {content}
+                                        </a>
+                                    ) : (
+                                        <div className="bg-white rounded-xl p-6 shadow-sm">{content}</div>
+                                    )}
+                                </Reveal>
+                            )
+                        })}
                     </div>
                 </div>
             </section>

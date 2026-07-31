@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
 import { ProductCard } from "./product-card"
 import { Reveal } from "./reveal"
@@ -45,19 +44,6 @@ const featuredProducts: Product[] = [
 ]
 
 export function FeaturedProducts() {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const handleQuickLook = (product: Product) => {
-    setSelectedProduct(product)
-    setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedProduct(null)
-  }
-
   return (
       <section className="py-20 lg:py-32" id="featured-products">
         <div className="container-custom">
@@ -91,7 +77,7 @@ export function FeaturedProducts() {
                     }}
                 >
                   <Reveal delay={index * 0.1}>
-                    <ProductCard product={product} onQuickLook={handleQuickLook} />
+                    <ProductCard product={product} />
                   </Reveal>
                 </motion.div>
             ))}

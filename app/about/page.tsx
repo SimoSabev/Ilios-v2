@@ -5,7 +5,7 @@ import {Footer} from "@/components/footer"
 import {motion, useScroll, useTransform} from "framer-motion"
 import {Reveal} from "@/components/reveal"
 import Image from "next/image"
-import {Award, Layers, LineSquiggle, Monitor, Box} from "lucide-react"
+import {Award, Layers, LineSquiggle, Box} from "lucide-react"
 import {useRef} from "react"
 
 export default function AboutPage() {
@@ -161,6 +161,33 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Achievements Section */}
+            <section className="pb-16 lg:pb-32">
+                <div className="container-custom">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                        {achievements.map((achievement, index) => {
+                            const Icon = achievement.icon
+                            return (
+                                <Reveal key={achievement.label} delay={index * 0.1}>
+                                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden group">
+                                        <Image
+                                            src={achievement.image}
+                                            alt={achievement.label}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                                        <div className="absolute inset-0 flex flex-col justify-end p-5">
+                                            <Icon size={22} className="text-white mb-3" />
+                                            <p className="text-white font-semibold leading-snug">{achievement.label}</p>
+                                        </div>
+                                    </div>
+                                </Reveal>
+                            )
+                        })}
+                    </div>
+                </div>
+            </section>
 
             {/* Expertise / Collections Section */}
             <section className="py-20 bg-neutral-100">
@@ -174,6 +201,19 @@ export default function AboutPage() {
                             10+ Years Experience in sourcing, supplying, setting-up, curating and maintaining various
                             Interiors.
                         </p>
+                    </Reveal>
+
+                    <Reveal delay={0.1}>
+                        <div className="flex flex-wrap justify-center gap-3 mt-10">
+                            {expertise.map((skill) => (
+                                <span
+                                    key={skill}
+                                    className="bg-white text-neutral-800 px-5 py-2.5 rounded-full text-sm font-medium shadow-sm"
+                                >
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
                     </Reveal>
                 </div>
             </section>

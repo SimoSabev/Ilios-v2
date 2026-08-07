@@ -5,6 +5,7 @@ import { CollectionStrip } from "@/components/collection-strip"
 import { MaterialsSection } from "@/components/materials-section"
 import { Footer } from "@/components/footer"
 import { YachtShowcaseSection } from "@/components/yacht-showcase-section"
+import { ResidentialShowcaseSection } from "@/components/residential-showcase-section"
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       {/*<FeaturedProducts />*/}
       <YachtShowcaseSection />
       <CollectionStrip />
+      <ResidentialShowcaseSection />
       <MaterialsSection />
       {/*<NewsletterSection />*/}
       <Footer />
